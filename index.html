@@ -1,513 +1,598 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Александра & Максим — свадебное приглашение</title>
-<meta name="description" content="Свадебное приглашение Александры и Максима" />
-<style>
-:root {
---bg: #fcfaf7;
---text: #5d5a57;
---title: #7f746d;
---accent: #e8d9c8;
---accent-2: #e9c3d0;
---accent-3: #d8c8e4;
---accent-4: #cad8ea;
---accent-5: #cfd9b6;
---accent-6: #ece9b6;
---card: rgba(255,255,255,0.88);
---shadow: 0 10px 30px rgba(120, 110, 100, 0.12);
---radius: 28px;
-}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Александра и Максим — свадебное приглашение</title>
+  <meta name="description" content="Свадебное приглашение Александры и Максима" />
 
-* {
-box-sizing: border-box;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-html {
-scroll-behavior: smooth;
-}
+  <style>
+    :root{
+      --red:#c70f1a;
+      --red-dark:#a80d16;
+      --cream:#f6f0e3;
+      --text:#6f312f;
+      --soft:#f3ebdf;
+      --pink:#edc9d2;
+      --lilac:#d9c9e6;
+      --blue:#c8d8ec;
+      --green:#cbd4a9;
+      --yellow:#ece7ab;
+      --shadow: 0 14px 34px rgba(80, 10, 10, .16);
+      --radius: 36px;
+    }
 
-body {
-margin: 0;
-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-color: var(--text);
-background:
-radial-gradient(circle at top left, rgba(233,195,208,0.20), transparent 28%),
-radial-gradient(circle at top right, rgba(202,216,234,0.22), transparent 26%),
-radial-gradient(circle at bottom left, rgba(207,217,182,0.18), transparent 24%),
-var(--bg);
-line-height: 1.5;
-}
+    *{ box-sizing:border-box; }
 
-.container {
-width: min(100%, 430px);
-margin: 0 auto;
-padding: 18px 14px 40px;
-}
+    html{ scroll-behavior:smooth; }
 
-.section {
-background: var(--card);
-backdrop-filter: blur(8px);
-border-radius: var(--radius);
-padding: 18px;
-margin-bottom: 16px;
-box-shadow: var(--shadow);
-overflow: hidden;
-}
+    body{
+      margin:0;
+      background:var(--red);
+      color:var(--text);
+      font-family:"Manrope", system-ui, sans-serif;
+      -webkit-font-smoothing:antialiased;
+    }
 
-.hero {
-padding: 0;
-overflow: hidden;
-}
+    img{ display:block; width:100%; }
 
-.hero-photo {
-position: relative;
-height: 470px;
-overflow: hidden;
-}
+    .page{
+      width:100%;
+      max-width:430px;
+      margin:0 auto;
+      padding:18px 12px 42px;
+    }
 
-.hero-photo img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
-filter: saturate(0.98) contrast(1.02);
-}
+    .card{
+      background:var(--cream);
+      border-radius:0;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      margin-bottom:0;
+    }
 
-.hero-overlay {
-position: absolute;
-inset: 0;
-background: linear-gradient(to top, rgba(60,50,45,0.50), rgba(60,50,45,0.08) 45%, rgba(60,50,45,0.00));
-}
+    .section{
+      position:relative;
+      padding:26px 18px;
+      overflow:hidden;
+      border-top:1px solid rgba(199,15,26,.08);
+    }
 
-.hero-text {
-position: absolute;
-left: 18px;
-right: 18px;
-bottom: 18px;
-color: #fffdf9;
-text-align: center;
-}
+    .section.no-border{
+      border-top:none;
+    }
 
-.eyebrow {
-letter-spacing: 0.22em;
-text-transform: uppercase;
-font-size: 11px;
-opacity: 0.92;
-margin-bottom: 8px;
-}
+    .hand{
+      font-family:"Marck Script", cursive;
+      color:var(--red);
+      letter-spacing:.5px;
+      line-height:.95;
+    }
 
-h1 {
-margin: 0;
-font-size: 34px;
-line-height: 1.08;
-font-weight: 600;
-}
+    .hero{
+      padding:0;
+      background:var(--cream);
+    }
 
-.date {
-margin-top: 10px;
-font-size: 18px;
-opacity: 0.98;
-}
+    .hero-top{
+      position:relative;
+      padding:18px 14px 8px;
+      background:var(--cream);
+    }
 
-.lead {
-text-align: center;
-font-size: 16px;
-margin: 0;
-}
+    .hero-names{
+      text-align:center;
+      font-size:54px;
+      line-height:.9;
+      margin:0 0 10px;
+    }
 
-h2 {
-margin: 0 0 14px;
-text-align: center;
-font-size: 25px;
-color: var(--title);
-font-weight: 600;
-}
+    .plus{
+      display:block;
+      font-size:50px;
+      margin:2px 0;
+    }
 
-.sub {
-text-align: center;
-margin: 0 auto;
-max-width: 320px;
-font-size: 15px;
-}
+    .hero-photo-wrap{
+      position:relative;
+      margin:0 auto;
+      width:100%;
+      max-width:320px;
+      border-radius:40px;
+      overflow:hidden;
+      background:#111;
+      padding:10px;
+      box-shadow:0 18px 32px rgba(0,0,0,.22);
+    }
 
-.countdown {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 10px;
-margin-top: 16px;
-}
+    .hero-photo{
+      border-radius:30px;
+      overflow:hidden;
+      aspect-ratio: 9 / 16;
+      background:#ddd;
+    }
 
-.count-item {
-background: #fff;
-border-radius: 20px;
-padding: 12px 8px;
-text-align: center;
-box-shadow: inset 0 0 0 1px rgba(120,110,100,0.06);
-}
+    .hero-photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
 
-.count-item strong {
-display: block;
-font-size: 24px;
-color: var(--title);
-}
+    .hero-date{
+      position:absolute;
+      left:50%;
+      bottom:26px;
+      transform:translateX(-50%);
+      background:rgba(246,240,227,.96);
+      color:var(--red);
+      padding:7px 16px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:22px;
+      letter-spacing:.03em;
+      box-shadow:0 6px 20px rgba(0,0,0,.12);
+    }
 
-.count-item span {
-font-size: 12px;
-opacity: 0.75;
-}
+    .heart{
+      position:absolute;
+      width:26px;
+      height:26px;
+      background:var(--red);
+      transform:rotate(-45deg);
+      right:44px;
+      bottom:90px;
+      border-radius:6px;
+    }
 
-.pill {
-display: inline-block;
-padding: 10px 18px;
-border-radius: 999px;
-text-decoration: none;
-background: linear-gradient(135deg, #eddccc, #e9c3d0);
-color: #5a514a;
-font-weight: 600;
-box-shadow: 0 8px 18px rgba(180, 160, 150, 0.18);
-transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
+    .heart::before,
+    .heart::after{
+      content:"";
+      position:absolute;
+      width:26px;
+      height:26px;
+      background:var(--red);
+      border-radius:50%;
+    }
 
-.pill:hover {
-transform: translateY(-1px);
-box-shadow: 0 12px 24px rgba(180, 160, 150, 0.22);
-}
+    .heart::before{
+      top:-13px;
+      left:0;
+    }
 
-.actions {
-display: flex;
-flex-direction: column;
-gap: 10px;
-margin-top: 16px;
-}
+    .heart::after{
+      left:13px;
+      top:0;
+    }
 
-.place-card {
-text-align: center;
-background: linear-gradient(180deg, rgba(233,195,208,0.14), rgba(202,216,234,0.14));
-border-radius: 24px;
-padding: 18px;
-}
+    .title{
+      margin:0 0 16px;
+      text-align:center;
+      font-size:44px;
+    }
 
-.place-name {
-font-size: 22px;
-color: var(--title);
-font-weight: 600;
-margin-bottom: 8px;
-}
+    .title.small{
+      font-size:40px;
+    }
 
-.address {
-font-size: 15px;
-margin-bottom: 16px;
-}
+    .text{
+      position:relative;
+      z-index:2;
+      font-size:15px;
+      line-height:1.6;
+      text-align:center;
+      color:#7b4846;
+      margin:0 auto;
+      max-width:320px;
+    }
 
-.timeline {
-display: grid;
-gap: 12px;
-margin-top: 8px;
-}
+    .blob{
+      position:relative;
+      z-index:1;
+      width:100%;
+      background:var(--red);
+      color:#fff7f5;
+      margin-top:18px;
+      padding:28px 22px 26px;
+      border-radius:52% 48% 53% 47% / 39% 44% 56% 61%;
+      box-shadow:inset 0 -8px 18px rgba(255,255,255,.06);
+    }
 
-.timeline-item {
-display: grid;
-grid-template-columns: 82px 1fr;
-gap: 12px;
-align-items: center;
-padding: 12px 14px;
-border-radius: 22px;
-background: #fff;
-box-shadow: inset 0 0 0 1px rgba(120,110,100,0.06);
-}
+    .blob .blob-title{
+      font-family:"Marck Script", cursive;
+      font-size:40px;
+      line-height:.95;
+      text-align:center;
+      margin:0 0 12px;
+      color:#fff3ef;
+    }
 
-.timeline-time {
-font-size: 24px;
-font-weight: 700;
-color: var(--title);
-text-align: center;
-}
+    .blob .blob-text{
+      margin:0 auto;
+      max-width:250px;
+      text-align:center;
+      font-size:14px;
+      line-height:1.6;
+      color:#fff5f2;
+    }
 
-.timeline-name {
-font-size: 16px;
-}
+    .button{
+      display:block;
+      width:max-content;
+      min-width:180px;
+      text-align:center;
+      margin:18px auto 0;
+      text-decoration:none;
+      background:var(--red);
+      color:#fff;
+      border-radius:999px;
+      padding:12px 22px;
+      font-size:14px;
+      font-weight:800;
+      box-shadow:0 10px 20px rgba(140,0,0,.18);
+    }
 
-.palette {
-display: flex;
-justify-content: center;
-gap: 12px;
-flex-wrap: wrap;
-margin: 18px 0 12px;
-}
+    .button.light{
+      background:#fff5f2;
+      color:var(--red);
+    }
 
-.dot {
-width: 46px;
-height: 46px;
-border-radius: 50%;
-box-shadow: inset 0 0 0 1px rgba(90,80,70,0.05);
-}
+    .program-grid{
+      display:grid;
+      grid-template-columns:92px 1fr;
+      gap:14px 10px;
+      align-items:start;
+      position:relative;
+      z-index:2;
+      margin-top:18px;
+    }
 
-.note-box {
-background: linear-gradient(180deg, rgba(236,233,182,0.18), rgba(207,217,182,0.12));
-border-radius: 22px;
-padding: 16px;
-font-size: 15px;
-}
+    .program-time{
+      color:var(--red);
+      font-weight:800;
+      font-size:22px;
+      line-height:1;
+      text-align:left;
+    }
 
-.contact-box {
-text-align: center;
-background: #fff;
-border-radius: 22px;
-padding: 16px;
-margin-top: 14px;
-box-shadow: inset 0 0 0 1px rgba(120,110,100,0.06);
-}
+    .program-name{
+      color:#7a4a47;
+      font-size:16px;
+      padding-top:2px;
+    }
 
-.contact-box a {
-color: var(--title);
-text-decoration: none;
-font-weight: 600;
-}
+    .program-image{
+      margin-top:20px;
+      border-radius:0;
+      overflow:hidden;
+    }
 
-.gallery {
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 10px;
-margin-top: 14px;
-}
+    .program-image img{
+      width:100%;
+      max-height:310px;
+      object-fit:cover;
+      object-position:center;
+      filter:saturate(.95);
+    }
 
-.gallery img {
-width: 100%;
-aspect-ratio: 1 / 1.15;
-object-fit: cover;
-border-radius: 22px;
-display: block;
-}
+    .palette{
+      display:flex;
+      justify-content:center;
+      gap:14px;
+      flex-wrap:wrap;
+      margin:14px 0 10px;
+    }
 
-.footer-text {
-text-align: center;
-font-size: 24px;
-color: var(--title);
-margin: 0;
-}
+    .dot{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      box-shadow:inset 0 0 0 1px rgba(0,0,0,.04);
+    }
 
-.small {
-font-size: 13px;
-opacity: 0.72;
-text-align: center;
-margin-top: 10px;
-}
+    .details-list{
+      text-align:center;
+      max-width:290px;
+      margin:0 auto;
+      font-size:14px;
+      line-height:1.7;
+      color:#7a4a47;
+    }
 
-.fade-up {
-opacity: 0;
-transform: translateY(22px);
-transition: all 0.7s ease;
-}
+    .contact{
+      text-align:center;
+      margin-top:16px;
+      font-size:14px;
+      line-height:1.7;
+      color:#7a4a47;
+    }
 
-.fade-up.visible {
-opacity: 1;
-transform: translateY(0);
-}
+    .contact a{
+      color:var(--red);
+      text-decoration:none;
+      font-weight:700;
+    }
 
-@media (max-width: 380px) {
-h1 {
-font-size: 30px;
-}
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:12px;
+    }
 
-.hero-photo {
-height: 420px;
-}
+    .gallery img{
+      aspect-ratio: 1 / 1.18;
+      object-fit:cover;
+      border-radius:16px;
+    }
 
-.timeline-item {
-grid-template-columns: 70px 1fr;
-}
+    .footer{
+      text-align:center;
+      padding:30px 18px 34px;
+    }
 
-.timeline-time {
-font-size: 21px;
-}
-}
-</style>
+    .footer .hand{
+      font-size:50px;
+      line-height:.9;
+    }
+
+    .footer-small{
+      margin-top:10px;
+      color:#8b5d59;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.05em;
+    }
+
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:8px;
+      margin-top:18px;
+    }
+
+    .count{
+      background:#fff8f0;
+      border-radius:18px;
+      padding:12px 8px;
+      text-align:center;
+      box-shadow:inset 0 0 0 1px rgba(199,15,26,.08);
+    }
+
+    .count strong{
+      display:block;
+      font-size:22px;
+      color:var(--red);
+      line-height:1.1;
+    }
+
+    .count span{
+      display:block;
+      margin-top:4px;
+      font-size:11px;
+      color:#916664;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+    }
+
+    .fade{
+      opacity:0;
+      transform:translateY(20px);
+      transition:.7s ease;
+    }
+
+    .fade.show{
+      opacity:1;
+      transform:none;
+    }
+
+    @media (max-width:380px){
+      .hero-names{ font-size:46px; }
+      .title{ font-size:38px; }
+      .title.small{ font-size:35px; }
+      .blob .blob-title{ font-size:35px; }
+      .program-grid{ grid-template-columns:78px 1fr; }
+      .program-time{ font-size:20px; }
+    }
+  </style>
 </head>
 <body>
-<main class="container">
+  <main class="page">
+    <div class="card">
 
-<section class="section hero fade-up">
-<div class="hero-photo">
-<img src="photo-1.jpg" alt="Александра и Максим" />
-<div class="hero-overlay"></div>
-<div class="hero-text">
-<div class="eyebrow">Свадебное приглашение</div>
-<h1>Александра<br>& Максим</h1>
-<div class="date">06 августа 2026</div>
-</div>
-</div>
-</section>
+      <section class="hero fade">
+        <div class="hero-top">
+          <h1 class="hand hero-names">
+            Александра
+            <span class="plus">+</span>
+            Максим
+          </h1>
 
-<section class="section fade-up">
-<h2>Дорогие друзья и родные</h2>
-<p class="lead">
-С большой радостью приглашаем вас разделить с нами один из самых важных и счастливых дней в нашей жизни.
-</p>
+          <div class="hero-photo-wrap">
+            <div class="hero-photo">
+              <img src="photo-1.jpg" alt="Александра и Максим">
+            </div>
+            <div class="hero-date">06.08.26</div>
+            <div class="heart"></div>
+          </div>
+        </div>
+      </section>
 
-<div class="countdown" id="countdown">
-<div class="count-item"><strong id="days">0</strong><span>дней</span></div>
-<div class="count-item"><strong id="hours">0</strong><span>часов</span></div>
-<div class="count-item"><strong id="minutes">0</strong><span>минут</span></div>
-<div class="count-item"><strong id="seconds">0</strong><span>секунд</span></div>
-</div>
-</section>
+      <section class="section no-border fade">
+        <h2 class="hand title">Дорогие друзья<br>и родные!</h2>
+        <p class="text">
+          С большой радостью приглашаем вас разделить с нами один из самых
+          важных дней в нашей жизни — день нашей свадьбы.
+        </p>
 
-<section class="section fade-up">
-<h2>Место</h2>
-<div class="place-card">
-<div class="place-name">Праздничная площадка</div>
-<div class="address">
-Москва, МО, д. Голиково,<br />
-ул. Шоссейная, стр. 4
-</div>
-<a
-class="pill"
-href="https://www.google.com/maps/search/?api=1&query=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9C%D0%9E%2C%20%D0%B4.%20%D0%93%D0%BE%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%BE%2C%20%D1%83%D0%BB.%20%D0%A8%D0%BE%D1%81%D1%81%D0%B5%D0%B9%D0%BD%D0%B0%D1%8F%2C%20%D1%81%D1%82%D1%80.%204"
-target="_blank"
-rel="noopener noreferrer"
->
-Открыть на карте
-</a>
-</div>
-</section>
+        <div class="countdown">
+          <div class="count"><strong id="days">0</strong><span>дней</span></div>
+          <div class="count"><strong id="hours">0</strong><span>часов</span></div>
+          <div class="count"><strong id="minutes">0</strong><span>минут</span></div>
+          <div class="count"><strong id="seconds">0</strong><span>секунд</span></div>
+        </div>
 
-<section class="section fade-up">
-<h2>Программа дня</h2>
-<div class="timeline">
-<div class="timeline-item">
-<div class="timeline-time">16:00</div>
-<div class="timeline-name">Сбор гостей</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-time">16:30</div>
-<div class="timeline-name">Церемония</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-time">17:00</div>
-<div class="timeline-name">Банкет</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-time">21:00</div>
-<div class="timeline-name">Торт</div>
-</div>
-<div class="timeline-item">
-<div class="timeline-time">22:00</div>
-<div class="timeline-name">Диджей-сет</div>
-</div>
-</div>
-</section>
+        <div class="blob">
+          <div class="blob-title">Место</div>
+          <div class="blob-text">
+            Москва, МО,<br>
+            д. Голиково,<br>
+            ул. Шоссейная, стр. 4
+          </div>
+        </div>
 
-<section class="section fade-up">
-<h2>Дресс-код</h2>
-<p class="sub">
-Определенного дресс-кода нет, но нам будет очень приятно, если вы выберете наряды в нежных пастельных оттенках.
-</p>
+        <a class="button" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9C%D0%9E%2C%20%D0%B4.%20%D0%93%D0%BE%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%BE%2C%20%D1%83%D0%BB.%20%D0%A8%D0%BE%D1%81%D1%81%D0%B5%D0%B9%D0%BD%D0%B0%D1%8F%2C%20%D1%81%D1%82%D1%80.%204">
+          посмотреть на карте
+        </a>
+      </section>
 
-<div class="palette">
-<div class="dot" style="background:#e8dccf;"></div>
-<div class="dot" style="background:#ebc8d4;"></div>
-<div class="dot" style="background:#d7c9e1;"></div>
-<div class="dot" style="background:#cad8ea;"></div>
-<div class="dot" style="background:#cbd7b1;"></div>
-<div class="dot" style="background:#ece8b7;"></div>
-</div>
+      <section class="section fade">
+        <h2 class="hand title">Программа<br>свадьбы</h2>
 
-<div class="small">Пастельные и светлые оттенки будут смотреться особенно красиво</div>
-</section>
+        <div class="program-grid">
+          <div class="program-time">16.00</div>
+          <div class="program-name">сбор гостей</div>
 
-<section class="section fade-up">
-<h2>Детали</h2>
-<div class="note-box">
-Мы очень хотим, чтобы этот день получился тёплым, красивым и по-настоящему радостным для всех.
-Самое главное для нас — ваше присутствие, улыбки и хорошее настроение.
-</div>
+          <div class="program-time">16.30</div>
+          <div class="program-name">церемония</div>
 
-<div class="contact-box">
-По всем вопросам:<br />
-<strong>Организатор Элина</strong><br />
-<a href="tel:+79136243383">+7 913 624 3383</a>
-</div>
-</section>
+          <div class="program-time">17.00</div>
+          <div class="program-name">банкет</div>
 
-<section class="section fade-up">
-<h2>Чат для гостей</h2>
-<p class="sub">
-Чтобы было удобнее делиться новостями, фото и важной информацией, мы подготовили общий чат.
-</p>
-<div class="actions">
-<a class="pill" href="https://t.me/chatgostei" target="_blank" rel="noopener noreferrer">Вступить в чат</a>
-</div>
-</section>
+          <div class="program-time">21.00</div>
+          <div class="program-name">торт</div>
 
-<section class="section fade-up">
-<h2>Анкета гостя</h2>
-<p class="sub">
-Пожалуйста, заполните небольшую анкету — это поможет нам лучше подготовить праздник.
-</p>
-<div class="actions">
-<a class="pill" href="https://docs.google.com/forms/d/e/1FAIpQLSegnT85D6d_hxpnIIXGRkDu8o23IhzrHlPODOs59qT3kruG_w/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer">
-Заполнить анкету
-</a>
-</div>
-</section>
+          <div class="program-time">22.00</div>
+          <div class="program-name">диджей сет</div>
+        </div>
 
-<section class="section fade-up">
-<h2>Немного нас</h2>
-<div class="gallery">
-<img src="photo-2.jpg" alt="Фото пары 1" />
-<img src="photo-3.jpg" alt="Фото пары 2" />
-<img src="photo-4.jpg" alt="Фото пары 3" />
-<img src="photo-5.jpg" alt="Фото пары 4" />
-</div>
-</section>
+        <div class="program-image">
+          <img src="photo-2.jpg" alt="Фото пары">
+        </div>
+      </section>
 
-<section class="section fade-up">
-<p class="footer-text">Ждём вас с любовью</p>
-<div class="small">Александра & Максим · 06.08.2026</div>
-</section>
-</main>
+      <section class="section fade">
+        <h2 class="hand title small">Дресс-код</h2>
 
-<script>
-const weddingDate = new Date("2026-08-06T16:00:00+03:00");
+        <p class="text">
+          Определенного дресс-кода нет, но нам будет очень приятно,
+          если вы отдадите предпочтение нежным пастельным оттенкам.
+        </p>
 
-function updateCountdown() {
-const now = new Date();
-const diff = weddingDate - now;
+        <div class="palette">
+          <div class="dot" style="background:#eadfd1"></div>
+          <div class="dot" style="background:#ebc4d0"></div>
+          <div class="dot" style="background:#d8c8e3"></div>
+          <div class="dot" style="background:#cad8ea"></div>
+          <div class="dot" style="background:#cbd5b0"></div>
+          <div class="dot" style="background:#ece8b4"></div>
+        </div>
+      </section>
 
-if (diff <= 0) {
-document.getElementById("days").textContent = "0";
-document.getElementById("hours").textContent = "0";
-document.getElementById("minutes").textContent = "0";
-document.getElementById("seconds").textContent = "0";
-return;
-}
+      <section class="section fade">
+        <div class="blob" style="margin-top:0; border-radius:44% 56% 48% 52% / 44% 42% 58% 56%;">
+          <div class="blob-title">Детали</div>
+          <div class="blob-text">
+            Самое главное для нас — ваше присутствие, хорошее настроение
+            и тёплая атмосфера этого дня.
+            <br><br>
+            Если у вас появятся вопросы, пожалуйста, свяжитесь с нашим организатором.
+          </div>
+        </div>
 
-const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-const minutes = Math.floor((diff / (1000 * 60)) % 60);
-const seconds = Math.floor((diff / 1000) % 60);
+        <div class="contact">
+          Организатор Элина<br>
+          <a href="tel:+79136243383">+7 913 624 3383</a>
+        </div>
+      </section>
 
-document.getElementById("days").textContent = days;
-document.getElementById("hours").textContent = hours;
-document.getElementById("minutes").textContent = minutes;
-document.getElementById("seconds").textContent = seconds;
-}
+      <section class="section fade">
+        <h2 class="hand title small">Чат<br>для гостей</h2>
+        <p class="text">
+          Присоединяйтесь к общему чату — там будет удобнее делиться
+          новостями, фотографиями и важной информацией.
+        </p>
 
-updateCountdown();
-setInterval(updateCountdown, 1000);
+        <a class="button" target="_blank" rel="noopener" href="https://t.me/chatgostei">
+          присоединиться
+        </a>
+      </section>
 
-const observer = new IntersectionObserver((entries) => {
-entries.forEach(entry => {
-if (entry.isIntersecting) {
-entry.target.classList.add("visible");
-}
-});
-}, { threshold: 0.12 });
+      <section class="section fade">
+        <div class="blob" style="margin-top:0; border-radius:56% 44% 45% 55% / 38% 54% 46% 62%;">
+          <div class="blob-title">Анкета</div>
+          <div class="blob-text">
+            Мы очень хотим, чтобы этот день оставил самые тёплые воспоминания.
+            Просим вас заполнить небольшую анкету, чтобы мы могли лучше подготовить праздник.
+          </div>
 
-document.querySelectorAll(".fade-up").forEach(el => observer.observe(el));
-</script>
+          <a class="button light" target="_blank" rel="noopener"
+             href="https://docs.google.com/forms/d/e/1FAIpQLSegnT85D6d_hxpnIIXGRkDu8o23IhzrHlPODOs59qT3kruG_w/viewform?usp=publish-editor">
+            заполнить анкету
+          </a>
+        </div>
+      </section>
+
+      <section class="section fade">
+        <h2 class="hand title small">Немного нас</h2>
+        <div class="gallery">
+          <img src="photo-2.jpg" alt="Фото 1">
+          <img src="photo-3.jpg" alt="Фото 2">
+          <img src="photo-4.jpg" alt="Фото 3">
+          <img src="photo-5.jpg" alt="Фото 4">
+        </div>
+      </section>
+
+      <section class="footer fade">
+        <div class="hand">До встречи!</div>
+        <div class="footer-small">Александра & Максим · 06.08.2026</div>
+      </section>
+
+    </div>
+  </main>
+
+  <script>
+    const weddingDate = new Date("2026-08-06T16:00:00+03:00");
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        document.getElementById("days").textContent = 0;
+        document.getElementById("hours").textContent = 0;
+        document.getElementById("minutes").textContent = 0;
+        document.getElementById("seconds").textContent = 0;
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
