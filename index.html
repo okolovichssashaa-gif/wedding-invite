@@ -13,14 +13,13 @@
   <style>
     :root{
       --bg:#5b6c34;
-      --bg-dark:#4a5929;
+      --bg-dark:#495929;
       --card:#efe7d8;
       --card-2:#f4edde;
       --red:#ae1f22;
       --red-dark:#8e171a;
-      --green-text:#58692f;
+      --green-text:#55662f;
       --text:#455227;
-      --muted:#6e744f;
       --white:#fffdfa;
       --shadow:0 10px 26px rgba(0,0,0,.16);
     }
@@ -39,8 +38,8 @@
       background-attachment: fixed;
     }
 
-    img{display:block; width:100%}
-    a{color:inherit}
+    img{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
 
     .page{
       width:min(100%, 390px);
@@ -53,13 +52,40 @@
       box-shadow:var(--shadow);
       min-height:100vh;
       overflow:hidden;
+      position:relative;
+    }
+
+    .panel::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      pointer-events:none;
+      background:
+        radial-gradient(circle at 8% 3%, rgba(174,31,34,.08), transparent 10%),
+        radial-gradient(circle at 92% 18%, rgba(85,102,47,.08), transparent 12%),
+        radial-gradient(circle at 15% 65%, rgba(174,31,34,.05), transparent 10%),
+        radial-gradient(circle at 85% 88%, rgba(85,102,47,.06), transparent 10%);
     }
 
     .section{
       position:relative;
-      padding:18px 18px 20px;
+      padding:18px 18px 22px;
       overflow:hidden;
     }
+
+    .ornament-top,
+    .ornament-bottom{
+      text-align:center;
+      color:var(--red);
+      font-size:22px;
+      letter-spacing:2px;
+      line-height:1;
+      opacity:.85;
+      font-family:"Caveat", cursive;
+    }
+
+    .ornament-top{ margin-bottom:8px; }
+    .ornament-bottom{ margin-top:12px; }
 
     .hand{
       font-family:"Caveat", cursive;
@@ -68,45 +94,95 @@
       letter-spacing:.3px;
     }
 
-    .hand-red{
-      color:var(--red);
-    }
+    .hand-red{ color:var(--red); }
 
     .hero{
-      padding:18px 16px 12px;
+      padding:16px 16px 14px;
     }
 
-    .hero-top{
+    .kids-note{
       text-align:center;
-      margin-bottom:10px;
+      margin:2px 0 10px;
     }
 
-    .hero-title{
-      font-size:34px;
+    .kids-title{
       margin:0;
-      line-height:.9;
+      font-family:"Caveat", cursive;
+      color:var(--green-text);
+      font-size:44px;
+      line-height:.95;
+      font-weight:700;
     }
 
-    .hero-title .line{display:block}
-    .hero-title .small{
-      font-size:26px;
+    .kids-title .line{
       display:block;
-      margin:2px 0;
     }
+
+    .wrong-word{
+      position:relative;
+      display:inline-block;
+      color:var(--red);
+      padding:0 4px 6px;
+    }
+
+    .wrong-word .cross{
+      position:absolute;
+      left:2px;
+      right:2px;
+      top:56%;
+      height:3px;
+      background:var(--red);
+      transform:rotate(-7deg);
+      border-radius:3px;
+      opacity:.95;
+    }
+
+    .wrong-word .fix{
+      position:absolute;
+      top:-18px;
+      left:66%;
+      transform:translateX(-50%) rotate(-9deg);
+      color:var(--red);
+      font-size:22px;
+      line-height:1;
+      font-weight:700;
+    }
+
+    .hero-photo-wrap{
+      position:relative;
+      padding:10px;
+      border:2px solid rgba(174,31,34,.18);
+      border-radius:28px 28px 18px 18px;
+      background:rgba(255,255,255,.35);
+    }
+
+    .hero-photo-wrap::before,
+    .hero-photo-wrap::after{
+      content:"♥";
+      position:absolute;
+      top:8px;
+      font-size:18px;
+      color:var(--red);
+      opacity:.8;
+      font-family:"Caveat", cursive;
+    }
+
+    .hero-photo-wrap::before{ left:10px; }
+    .hero-photo-wrap::after{ right:10px; }
 
     .hero-photo{
       position:relative;
-      border-radius:0 0 28px 28px;
+      border-radius:20px 20px 24px 24px;
       overflow:hidden;
       background:#ddd;
-      aspect-ratio: 4 / 5;
+      aspect-ratio:4/5;
     }
 
     .hero-photo img{
       width:100%;
       height:100%;
       object-fit:cover;
-      filter:grayscale(.05) contrast(1.02) brightness(1.01);
+      filter:grayscale(.03) contrast(1.02) brightness(1.01);
     }
 
     .hero-overlay{
@@ -134,7 +210,7 @@
     .hearts{
       text-align:center;
       color:var(--red);
-      font-size:24px;
+      font-size:22px;
       letter-spacing:7px;
       margin:8px 0 0;
       line-height:1;
@@ -150,8 +226,37 @@
       text-align:center;
       font-size:19px;
       line-height:1.05;
-      max-width:260px;
+      max-width:270px;
       margin:0 auto;
+    }
+
+    .frame{
+      position:relative;
+      border:1.5px solid rgba(174,31,34,.22);
+      border-radius:18px;
+      padding:14px 12px;
+      background:rgba(255,255,255,.18);
+    }
+
+    .frame::before,
+    .frame::after{
+      content:"";
+      position:absolute;
+      width:26px;
+      height:26px;
+      border-color:var(--red);
+      border-style:solid;
+      opacity:.35;
+    }
+
+    .frame::before{
+      top:8px; left:8px;
+      border-width:2px 0 0 2px;
+    }
+
+    .frame::after{
+      right:8px; bottom:8px;
+      border-width:0 2px 2px 0;
     }
 
     .calendar-wrap{
@@ -159,6 +264,7 @@
       padding:14px;
       border:3px solid var(--red);
       position:relative;
+      background:#f7f1e5;
     }
 
     .calendar-wrap::before,
@@ -200,9 +306,9 @@
     }
 
     .calendar-grid .mark{
-      width:24px;
-      height:24px;
-      margin:0 auto;
+      width:18px;
+      height:18px;
+      margin:2px auto 0;
       border-radius:50%;
       background:var(--red);
       color:#fff;
@@ -210,6 +316,8 @@
       align-items:center;
       justify-content:center;
       font-weight:700;
+      font-size:11px;
+      line-height:1;
     }
 
     .divider-lights{
@@ -274,6 +382,28 @@
 
     .timing{
       background:var(--card-2);
+      position:relative;
+    }
+
+    .timing::before{
+      content:"❦";
+      position:absolute;
+      top:10px;
+      left:12px;
+      color:rgba(174,31,34,.38);
+      font-size:28px;
+      font-family:"Caveat", cursive;
+    }
+
+    .timing::after{
+      content:"❦";
+      position:absolute;
+      bottom:10px;
+      right:12px;
+      color:rgba(174,31,34,.38);
+      font-size:28px;
+      font-family:"Caveat", cursive;
+      transform:rotate(180deg);
     }
 
     .timing-item{
@@ -281,9 +411,7 @@
       margin:0 0 18px;
     }
 
-    .timing-item:last-child{
-      margin-bottom:0;
-    }
+    .timing-item:last-child{ margin-bottom:0; }
 
     .timing-label{
       font-size:18px;
@@ -315,6 +443,16 @@
       line-height:1.02;
       text-align:center;
       box-shadow:0 8px 18px rgba(100,0,0,.12);
+      position:relative;
+    }
+
+    .wish-box::before{
+      content:"✦";
+      position:absolute;
+      top:8px;
+      right:10px;
+      color:rgba(255,255,255,.4);
+      font-size:18px;
     }
 
     .wish-box.alt{
@@ -326,9 +464,7 @@
       border-radius:42% 58% 49% 51% / 52% 39% 61% 48%;
     }
 
-    .dress-section{
-      background:var(--card);
-    }
+    .dress-section{ background:var(--card); }
 
     .big-flower{
       width:170px;
@@ -336,6 +472,19 @@
       margin:0 auto 10px;
       background:var(--red);
       clip-path:path("M85 0 C106 14 141 18 156 46 C168 80 159 121 132 143 C114 157 109 177 96 190 C83 177 76 157 57 146 C22 124 1 84 15 47 C28 17 63 16 85 0 Z");
+      position:relative;
+    }
+
+    .big-flower::after{
+      content:"❀";
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:rgba(255,255,255,.18);
+      font-size:52px;
+      font-family:"Caveat", cursive;
     }
 
     .palette{
@@ -351,6 +500,7 @@
       height:24px;
       border-radius:50%;
       display:inline-block;
+      box-shadow:0 1px 4px rgba(0,0,0,.12) inset;
     }
 
     .film{
@@ -362,6 +512,17 @@
       padding:18px 14px;
       border-top:8px solid #c54646;
       border-bottom:8px solid #c54646;
+      position:relative;
+    }
+
+    .film::before{
+      content:"✿";
+      position:absolute;
+      top:12px;
+      left:12px;
+      color:rgba(255,255,255,.25);
+      font-size:24px;
+      font-family:"Caveat", cursive;
     }
 
     .film-card{
@@ -382,6 +543,7 @@
       text-decoration:none;
       font-size:14px;
       font-weight:700;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
     }
 
     .button-red{
@@ -394,12 +556,27 @@
       border-radius:8px;
       font-size:14px;
       font-weight:700;
+      box-shadow:0 6px 12px rgba(100,0,0,.14);
     }
 
     .form-box{
       text-align:center;
       margin-top:18px;
+      position:relative;
     }
+
+    .form-box::before,
+    .form-box::after{
+      content:"♥";
+      position:absolute;
+      top:-4px;
+      font-size:16px;
+      color:rgba(174,31,34,.65);
+      font-family:"Caveat", cursive;
+    }
+
+    .form-box::before{ left:28px; }
+    .form-box::after{ right:28px; }
 
     .bottom-note{
       text-align:center;
@@ -411,6 +588,7 @@
       margin-top:10px;
       overflow:hidden;
       border-radius:24px 24px 0 0;
+      border:2px solid rgba(174,31,34,.16);
     }
 
     .bottom-photo img{
@@ -426,6 +604,13 @@
       gap:8px;
       margin-top:12px;
       text-align:center;
+    }
+
+    .count{
+      background:rgba(255,255,255,.32);
+      border-radius:14px;
+      padding:8px 4px;
+      border:1px solid rgba(174,31,34,.10);
     }
 
     .count strong{
@@ -452,6 +637,12 @@
       opacity:1;
       transform:none;
     }
+
+    @media (max-width:390px){
+      .kids-title{
+        font-size:40px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -459,17 +650,27 @@
     <div class="panel">
 
       <section class="section hero fade">
-        <div class="hero-top">
-          <h1 class="hero-title hand">
+        <div class="ornament-top">༺❦༻</div>
+
+        <div class="kids-note">
+          <h1 class="kids-title">
             <span class="line">Александра + Максим =</span>
-            <span class="small hand-red">любовь</span>
+            <span class="line hand-red">
+              <span class="wrong-word">
+                любоФь
+                <span class="cross"></span>
+                <span class="fix">В</span>
+              </span>
+            </span>
           </h1>
         </div>
 
-        <div class="hero-photo">
-          <img src="photo-1.jpg" alt="Александра и Максим">
-          <div class="hero-overlay"></div>
-          <div class="hero-date">06 августа 2026 года</div>
+        <div class="hero-photo-wrap">
+          <div class="hero-photo">
+            <img src="photo-1.jpg" alt="Александра и Максим">
+            <div class="hero-overlay"></div>
+            <div class="hero-date">06 августа 2026 года</div>
+          </div>
         </div>
 
         <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
@@ -477,10 +678,13 @@
 
       <section class="section fade">
         <h2 class="title hand hand-red">Узнали?</h2>
-        <p class="text">
-          Время пронеслось незаметно, и у этих двух малышей скоро свадьба!<br>
-          Да-да, мы сами в шоке!
-        </p>
+
+        <div class="frame">
+          <p class="text">
+            Время пронеслось незаметно, и у этих двух малышей скоро свадьба!<br>
+            Да-да, мы сами в шоке!
+          </p>
+        </div>
 
         <div class="calendar-wrap">
           <div class="calendar-title">Август</div>
@@ -503,7 +707,7 @@
         <div class="heart-row">
           <div class="heart-card">
             <span>
-              Регистрация пройдёт<br>
+              Ждём вас<br>
               по адресу:<br>
               Москва, МО,<br>
               д. Голиково,<br>
@@ -513,13 +717,16 @@
 
           <div class="heart-card" style="margin-top:34px;">
             <span>
-              Банкет пройдёт<br>
-              там же —<br>
-              на площадке<br>
-              торжества
+              Площадка<br>
+              праздника:<br>
+              Москва, МО,<br>
+              д. Голиково,<br>
+              ул. Шоссейная, стр. 4
             </span>
           </div>
         </div>
+
+        <div class="ornament-bottom">❦ ❦ ❦</div>
       </section>
 
       <section class="section timing fade">
@@ -560,8 +767,7 @@
 
         <div class="wish-number">#2</div>
         <div class="wish-box alt">
-          Нам важно, чтобы этот вечер стал для вас особенным!<br>
-          Поэтому предлагаем вам провести его в кругу взрослых, а заботу о детях доверить вашим близким.
+          Вместо цветов, приятным комплиментом для нас будет бутылка вашего любимого напитка, которую мы откроем на ближайшем совместном празднике.
         </div>
 
         <div class="wish-number">#3</div>
@@ -575,15 +781,16 @@
 
         <h2 class="title hand">Дресс-код</h2>
         <p class="text">
-          Этот день мы хотим наполнить светом, красотой и гармонией — и ваш образ может стать частью этой общей картины.
+          Определенного дресс-кода нет, но были бы рады, если бы вы отдали предпочтения постельным цветам.
         </p>
 
         <div class="palette">
-          <span class="dot" style="background:#5f7b2c"></span>
-          <span class="dot" style="background:#b41d24"></span>
-          <span class="dot" style="background:#d87d1f"></span>
-          <span class="dot" style="background:#111"></span>
-          <span class="dot" style="background:#fff"></span>
+          <span class="dot" style="background:#eadfce"></span>
+          <span class="dot" style="background:#ebc9d2"></span>
+          <span class="dot" style="background:#d9c9e4"></span>
+          <span class="dot" style="background:#c8d7ea"></span>
+          <span class="dot" style="background:#cdd7b2"></span>
+          <span class="dot" style="background:#ece6b8"></span>
         </div>
 
         <div class="film">
