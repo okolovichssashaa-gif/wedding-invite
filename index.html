@@ -8,421 +8,449 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pangolin&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --red:#bf0616;
-      --red-dark:#990413;
-      --cream:#f7f1e4;
-      --text:#7c3836;
-      --black:#171717;
-      --white:#fffdf8;
-      --shadow:0 18px 36px rgba(0,0,0,.18);
-      --radius:34px;
+      --bg:#5b6c34;
+      --bg-dark:#4a5929;
+      --card:#efe7d8;
+      --card-2:#f4edde;
+      --red:#ae1f22;
+      --red-dark:#8e171a;
+      --green-text:#58692f;
+      --text:#455227;
+      --muted:#6e744f;
+      --white:#fffdfa;
+      --shadow:0 10px 26px rgba(0,0,0,.16);
     }
 
     *{box-sizing:border-box}
-
     html{scroll-behavior:smooth}
-
     body{
       margin:0;
-      background:var(--red);
+      font-family:"Cormorant Garamond", serif;
       color:var(--text);
-      font-family:"Manrope", Arial, sans-serif;
-      -webkit-font-smoothing:antialiased;
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,255,255,.10), transparent 18%),
+        radial-gradient(circle at 80% 0%, rgba(255,255,255,.08), transparent 22%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,.07), transparent 28%),
+        linear-gradient(180deg, var(--bg) 0%, var(--bg-dark) 100%);
+      background-attachment: fixed;
     }
 
     img{display:block; width:100%}
+    a{color:inherit}
 
     .page{
-      width:min(100%, 430px);
+      width:min(100%, 390px);
       margin:0 auto;
-      padding:14px 12px 32px;
+      padding:0 0 28px;
     }
 
     .panel{
-      background:var(--cream);
-      overflow:hidden;
+      background:var(--card);
       box-shadow:var(--shadow);
+      min-height:100vh;
+      overflow:hidden;
     }
 
     .section{
       position:relative;
-      padding:22px 18px;
+      padding:18px 18px 20px;
       overflow:hidden;
-    }
-
-    .section + .section{
-      border-top:1px solid rgba(191,6,22,.06);
     }
 
     .hand{
-      font-family:"Pangolin", cursive;
-      color:var(--red);
-      letter-spacing:.5px;
+      font-family:"Caveat", cursive;
+      color:var(--green-text);
       line-height:.95;
+      letter-spacing:.3px;
     }
 
-    .center{text-align:center}
+    .hand-red{
+      color:var(--red);
+    }
 
     .hero{
-      padding:18px 16px 8px;
+      padding:18px 16px 12px;
+    }
+
+    .hero-top{
+      text-align:center;
+      margin-bottom:10px;
     }
 
     .hero-title{
-      margin:0 0 12px;
-      text-align:center;
-      font-size:30px;
-    }
-
-    .hero-title .line{
-      display:block;
-    }
-
-    .hero-title .plus,
-    .hero-title .eq{
-      display:block;
       font-size:34px;
-      line-height:1;
-      margin:4px 0;
+      margin:0;
+      line-height:.9;
     }
 
-    .phone{
-      width:100%;
-      max-width:290px;
-      margin:0 auto;
-      background:#111;
-      border-radius:38px;
-      padding:10px;
-      box-shadow:0 12px 28px rgba(0,0,0,.35);
+    .hero-title .line{display:block}
+    .hero-title .small{
+      font-size:26px;
+      display:block;
+      margin:2px 0;
+    }
+
+    .hero-photo{
       position:relative;
-    }
-
-    .phone::before{
-      content:"";
-      position:absolute;
-      top:8px;
-      left:50%;
-      transform:translateX(-50%);
-      width:102px;
-      height:22px;
-      border-radius:0 0 14px 14px;
-      background:#111;
-      z-index:5;
-    }
-
-    .screen{
-      background:#ddd;
-      border-radius:28px;
+      border-radius:0 0 28px 28px;
       overflow:hidden;
-      aspect-ratio: 9 / 16;
-      position:relative;
+      background:#ddd;
+      aspect-ratio: 4 / 5;
     }
 
-    .screen img{
+    .hero-photo img{
       width:100%;
       height:100%;
       object-fit:cover;
-      filter:grayscale(1) contrast(1.03);
+      filter:grayscale(.05) contrast(1.02) brightness(1.01);
     }
 
-    .screen-date{
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,.12), rgba(0,0,0,0) 45%);
+    }
+
+    .hero-date{
       position:absolute;
       left:50%;
-      bottom:26px;
+      bottom:12px;
       transform:translateX(-50%);
+      background:var(--bg);
+      color:#fff;
+      font-family:"Caveat", cursive;
+      font-size:24px;
+      line-height:1;
+      padding:8px 18px;
+      border-radius:999px;
+      white-space:nowrap;
+      box-shadow:0 6px 14px rgba(0,0,0,.14);
+    }
+
+    .hearts{
+      text-align:center;
       color:var(--red);
-      font-family:"Pangolin", cursive;
-      font-size:22px;
-      font-weight:700;
-      text-shadow:0 1px 0 rgba(255,255,255,.15);
+      font-size:24px;
+      letter-spacing:7px;
+      margin:8px 0 0;
+      line-height:1;
     }
 
-    .mini-heart{
-      position:absolute;
-      left:50%;
-      bottom:72px;
-      width:22px;
-      height:22px;
-      transform:translateX(-50%) rotate(-45deg);
-      background:var(--red);
-      border-radius:5px;
+    .title{
+      margin:0 0 10px;
+      text-align:center;
+      font-size:34px;
     }
 
-    .mini-heart::before,
-    .mini-heart::after{
+    .text{
+      text-align:center;
+      font-size:19px;
+      line-height:1.05;
+      max-width:260px;
+      margin:0 auto;
+    }
+
+    .calendar-wrap{
+      margin-top:16px;
+      padding:14px;
+      border:3px solid var(--red);
+      position:relative;
+    }
+
+    .calendar-wrap::before,
+    .calendar-wrap::after{
       content:"";
       position:absolute;
-      width:22px;
-      height:22px;
-      background:var(--red);
-      border-radius:50%;
+      top:-10px;
+      width:58px;
+      height:18px;
+      border-top:3px solid var(--red);
     }
 
-    .mini-heart::before{top:-11px; left:0;}
-    .mini-heart::after{top:0; left:11px;}
+    .calendar-wrap::before{left:16px}
+    .calendar-wrap::after{right:16px}
 
-    .heading{
-      margin:0 0 14px;
+    .calendar-title{
       text-align:center;
-      font-size:24px;
-    }
-
-    .subtext{
-      margin:0 auto;
-      max-width:250px;
-      text-align:center;
-      font-size:13px;
-      line-height:1.55;
-      color:#894846;
-    }
-
-    .blob{
-      position:relative;
-      background:var(--red);
-      color:#fff7f3;
-      padding:30px 22px;
-      margin-top:18px;
-      overflow:hidden;
-    }
-
-    .blob-left{
-      width:108%;
-      margin-left:-8%;
-      border-radius:58% 42% 55% 45% / 34% 44% 56% 66%;
-    }
-
-    .blob-right{
-      width:108%;
-      margin-left:0;
-      margin-right:-8%;
-      border-radius:38% 62% 43% 57% / 49% 38% 62% 51%;
-    }
-
-    .blob-bottom{
-      width:115%;
-      margin-left:-8%;
-      border-radius:62% 38% 0 0 / 28% 20% 0 0;
-      padding-top:34px;
-      padding-bottom:30px;
-    }
-
-    .blob-title{
-      font-family:"Pangolin", cursive;
-      text-align:center;
-      color:#fff6ef;
-      font-size:28px;
+      font-family:"Caveat", cursive;
+      font-size:34px;
+      color:var(--green-text);
+      margin-bottom:8px;
       line-height:1;
-      margin:0 0 12px;
     }
 
-    .blob-text{
-      max-width:245px;
+    .calendar-grid{
+      display:grid;
+      grid-template-columns:repeat(7,1fr);
+      gap:6px;
+      text-align:center;
+      color:#263115;
+      font-size:13px;
+    }
+
+    .calendar-grid .day-name{
+      font-weight:700;
+      font-size:11px;
+      text-transform:lowercase;
+      opacity:.9;
+    }
+
+    .calendar-grid .mark{
+      width:24px;
+      height:24px;
       margin:0 auto;
-      text-align:center;
-      font-size:12.8px;
-      line-height:1.55;
-      color:#fff8f4;
-    }
-
-    .btn{
-      display:block;
-      width:max-content;
-      min-width:180px;
-      margin:16px auto 0;
-      text-align:center;
-      text-decoration:none;
-      border:none;
-      border-radius:999px;
-      padding:10px 20px;
-      font-size:12px;
-      font-weight:800;
+      border-radius:50%;
       background:var(--red);
       color:#fff;
-      box-shadow:0 8px 18px rgba(120,0,0,.18);
-    }
-
-    .btn-light{
-      background:#fff6ef;
-      color:var(--red);
-    }
-
-    .program-wrap{
-      position:relative;
-      min-height:310px;
-    }
-
-    .program-grid{
-      position:relative;
-      z-index:2;
-      width:135px;
-      margin-top:6px;
-    }
-
-    .program-row{
-      margin-bottom:12px;
-    }
-
-    .program-time{
-      font-family:"Pangolin", cursive;
-      color:var(--red);
-      font-size:20px;
-      line-height:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       font-weight:700;
     }
 
-    .program-name{
-      font-size:12.8px;
-      color:#8b4d4a;
-      margin-top:2px;
+    .divider-lights{
+      text-align:center;
+      color:#d8ae31;
+      letter-spacing:6px;
+      margin-top:12px;
+      font-size:22px;
     }
 
-    .cutout{
+    .location-title{
+      margin-top:14px;
+    }
+
+    .heart-row{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      align-items:flex-end;
+      margin-top:12px;
+      padding-bottom:14px;
+    }
+
+    .heart-card{
+      width:120px;
+      height:114px;
+      position:relative;
+      transform:rotate(-45deg);
+      background:var(--red);
+      border-radius:18px;
+      box-shadow:0 10px 18px rgba(100,0,0,.14);
+      flex:0 0 auto;
+    }
+
+    .heart-card::before,
+    .heart-card::after{
+      content:"";
       position:absolute;
-      right:-6px;
-      bottom:-12px;
-      width:200px;
-      z-index:1;
-      filter:grayscale(1) contrast(1.02);
-      mix-blend-mode:multiply;
-      border-radius:0;
+      width:120px;
+      height:120px;
+      background:var(--red);
+      border-radius:50%;
+      z-index:-1;
     }
 
-    .dress-title{
-      margin-bottom:10px;
+    .heart-card::before{top:-60px; left:0}
+    .heart-card::after{left:60px; top:0}
+
+    .heart-card span{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      transform:rotate(45deg);
+      color:#fff9f4;
+      font-size:14px;
+      line-height:1.08;
+      padding:18px;
+    }
+
+    .timing{
+      background:var(--card-2);
+    }
+
+    .timing-item{
+      text-align:center;
+      margin:0 0 18px;
+    }
+
+    .timing-item:last-child{
+      margin-bottom:0;
+    }
+
+    .timing-label{
+      font-size:18px;
+      line-height:1;
+      margin-bottom:2px;
+    }
+
+    .timing-time{
+      font-size:39px;
+      line-height:.9;
+      font-weight:700;
+      color:var(--green-text);
+    }
+
+    .wish-number{
+      font-family:"Caveat", cursive;
+      font-size:34px;
+      line-height:1;
+      color:var(--green-text);
+      margin:12px 0 6px;
+    }
+
+    .wish-box{
+      background:var(--red);
+      color:#fff8f4;
+      border-radius:22px;
+      padding:18px 16px;
+      font-size:18px;
+      line-height:1.02;
+      text-align:center;
+      box-shadow:0 8px 18px rgba(100,0,0,.12);
+    }
+
+    .wish-box.alt{
+      border-radius:34px;
+      transform:rotate(-3deg);
+    }
+
+    .wish-box.alt2{
+      border-radius:42% 58% 49% 51% / 52% 39% 61% 48%;
+    }
+
+    .dress-section{
+      background:var(--card);
+    }
+
+    .big-flower{
+      width:170px;
+      height:190px;
+      margin:0 auto 10px;
+      background:var(--red);
+      clip-path:path("M85 0 C106 14 141 18 156 46 C168 80 159 121 132 143 C114 157 109 177 96 190 C83 177 76 157 57 146 C22 124 1 84 15 47 C28 17 63 16 85 0 Z");
     }
 
     .palette{
       display:flex;
       justify-content:center;
-      gap:12px;
-      margin:14px 0 12px;
+      gap:10px;
+      margin:12px 0 10px;
       flex-wrap:wrap;
     }
 
     .dot{
-      width:34px;
-      height:34px;
+      width:24px;
+      height:24px;
       border-radius:50%;
+      display:inline-block;
     }
 
-    .contact{
+    .film{
+      margin-top:16px;
+      background:
+        linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x top/48px 10px,
+        linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x bottom/48px 10px,
+        #bb2d30;
+      padding:18px 14px;
+      border-top:8px solid #c54646;
+      border-bottom:8px solid #c54646;
+    }
+
+    .film-card{
+      background:var(--card);
+      border-radius:14px;
+      padding:14px 12px;
       text-align:center;
-      font-size:12.8px;
-      line-height:1.6;
-      color:#894846;
-      margin-top:12px;
     }
 
-    .contact a{
-      color:#fff6ef;
-      font-weight:700;
+    .button{
+      display:inline-block;
+      margin-top:10px;
+      padding:10px 16px;
+      border:2px solid var(--red);
+      color:var(--red);
+      background:#fff9f2;
+      border-radius:10px;
       text-decoration:none;
+      font-size:14px;
+      font-weight:700;
     }
 
-    .icons{
-      display:flex;
-      justify-content:center;
-      gap:16px;
+    .button-red{
+      display:inline-block;
       margin-top:12px;
-      font-size:18px;
-      color:#fff6ef;
-    }
-
-    .guest-title,
-    .form-title{
-      margin-bottom:10px;
-    }
-
-    .small{
-      font-size:12.6px;
-      line-height:1.6;
-      color:#8a4c49;
-      text-align:center;
-      max-width:255px;
-      margin:0 auto;
-    }
-
-    .gallery{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:10px;
-      margin-top:6px;
-    }
-
-    .gallery img{
-      aspect-ratio:1 / 1.15;
-      object-fit:cover;
-      filter:grayscale(.1);
-    }
-
-    .footer{
-      padding:0;
-    }
-
-    .footer-blob{
+      padding:11px 18px;
       background:var(--red);
-      color:#fff8f2;
-      width:115%;
-      margin-left:-8%;
-      padding:34px 30px 28px;
-      border-radius:60% 40% 0 0 / 18% 18% 0 0;
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      font-size:14px;
+      font-weight:700;
     }
 
-    .footer-title{
+    .form-box{
       text-align:center;
-      font-size:30px;
-      color:#fff7f1;
-      margin:0;
-      font-family:"Pangolin", cursive;
+      margin-top:18px;
+    }
+
+    .bottom-note{
+      text-align:center;
+      margin-top:14px;
+      font-size:38px;
+    }
+
+    .bottom-photo{
+      margin-top:10px;
+      overflow:hidden;
+      border-radius:24px 24px 0 0;
+    }
+
+    .bottom-photo img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      filter:grayscale(1) contrast(1.04);
     }
 
     .countdown{
       display:grid;
-      grid-template-columns:repeat(4, 1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:8px;
-      margin-top:16px;
-    }
-
-    .count{
-      background:rgba(255,255,255,.45);
-      border-radius:16px;
-      padding:10px 4px;
+      margin-top:12px;
       text-align:center;
     }
 
     .count strong{
       display:block;
-      color:var(--red);
-      font-size:18px;
-      line-height:1.1;
+      font-size:26px;
+      line-height:1;
+      color:var(--green-text);
     }
 
     .count span{
       display:block;
       margin-top:2px;
-      color:#8c524f;
-      font-size:10px;
-      text-transform:uppercase;
+      font-size:11px;
+      color:#677146;
     }
 
     .fade{
       opacity:0;
-      transform:translateY(20px);
+      transform:translateY(18px);
       transition:.7s ease;
     }
 
     .fade.show{
       opacity:1;
       transform:none;
-    }
-
-    @media (max-width:380px){
-      .hero-title{font-size:27px}
-      .heading{font-size:22px}
-      .cutout{width:178px}
     }
   </style>
 </head>
@@ -431,156 +459,164 @@
     <div class="panel">
 
       <section class="section hero fade">
-        <h1 class="hero-title hand">
-          <span class="line">Александра</span>
-          <span class="plus">+</span>
-          <span class="line">Максим</span>
-          <span class="eq">=</span>
-        </h1>
-
-        <div class="phone">
-          <div class="screen">
-            <img src="photo-1.png" alt="Александра и Максим" />
-            <div class="mini-heart"></div>
-            <div class="screen-date">06.08.26</div>
-          </div>
+        <div class="hero-top">
+          <h1 class="hero-title hand">
+            <span class="line">Александра + Максим =</span>
+            <span class="small hand-red">любовь</span>
+          </h1>
         </div>
+
+        <div class="hero-photo">
+          <img src="photo-1.jpg" alt="Александра и Максим">
+          <div class="hero-overlay"></div>
+          <div class="hero-date">06 августа 2026 года</div>
+        </div>
+
+        <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
       </section>
 
       <section class="section fade">
-        <h2 class="heading hand">Дорогие друзья<br>и родные!</h2>
-        <p class="subtext">
-          С радостью приглашаем вас разделить с нами один
-          из самых важных дней в нашей жизни — наш свадебный день.
+        <h2 class="title hand hand-red">Узнали?</h2>
+        <p class="text">
+          Время пронеслось незаметно, и у этих двух малышей скоро свадьба!<br>
+          Да-да, мы сами в шоке!
         </p>
 
-        <div class="blob blob-left">
-          <div class="blob-title">Место</div>
-          <div class="blob-text">
-            Москва, МО, д. Голиково,<br>
-            ул. Шоссейная, стр. 4
+        <div class="calendar-wrap">
+          <div class="calendar-title">Август</div>
+          <div class="calendar-grid">
+            <div class="day-name">пн</div><div class="day-name">вт</div><div class="day-name">ср</div><div class="day-name">чт</div><div class="day-name">пт</div><div class="day-name">сб</div><div class="day-name">вс</div>
+
+            <div></div><div></div><div></div><div></div><div></div><div></div><div>1</div>
+            <div>2</div><div>3</div><div>4</div><div>5</div><div><span class="mark">6</span></div><div>7</div><div>8</div>
+            <div>9</div><div>10</div><div>11</div><div>12</div><div>13</div><div>14</div><div>15</div>
+            <div>16</div><div>17</div><div>18</div><div>19</div><div>20</div><div>21</div><div>22</div>
+            <div>23</div><div>24</div><div>25</div><div>26</div><div>27</div><div>28</div><div>29</div>
+            <div>30</div><div>31</div><div></div><div></div><div></div><div></div><div></div>
           </div>
         </div>
 
-        <a class="btn" target="_blank" rel="noopener"
-           href="https://www.google.com/maps/search/?api=1&query=%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%2C%20%D0%9C%D0%9E%2C%20%D0%B4.%20%D0%93%D0%BE%D0%BB%D0%B8%D0%BA%D0%BE%D0%B2%D0%BE%2C%20%D1%83%D0%BB.%20%D0%A8%D0%BE%D1%81%D1%81%D0%B5%D0%B9%D0%BD%D0%B0%D1%8F%2C%20%D1%81%D1%82%D1%80.%204">
-          посмотреть на карте
-        </a>
-      </section>
+        <div class="divider-lights">✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
 
-      <section class="section fade">
-        <h2 class="heading hand">Программа<br>свадьбы</h2>
+        <h2 class="title hand location-title">Локация</h2>
 
-        <div class="program-wrap">
-          <div class="program-grid">
-            <div class="program-row">
-              <div class="program-time">16.00</div>
-              <div class="program-name">сбор гостей</div>
-            </div>
-            <div class="program-row">
-              <div class="program-time">16.30</div>
-              <div class="program-name">церемония</div>
-            </div>
-            <div class="program-row">
-              <div class="program-time">17.00</div>
-              <div class="program-name">банкет</div>
-            </div>
-            <div class="program-row">
-              <div class="program-time">21.00</div>
-              <div class="program-name">торт</div>
-            </div>
-            <div class="program-row">
-              <div class="program-time">22.00</div>
-              <div class="program-name">диджей сет</div>
-            </div>
+        <div class="heart-row">
+          <div class="heart-card">
+            <span>
+              Регистрация пройдёт<br>
+              по адресу:<br>
+              Москва, МО,<br>
+              д. Голиково,<br>
+              ул. Шоссейная, стр. 4
+            </span>
           </div>
 
-          <img class="cutout" src="photo-2.png" alt="Фото пары">
+          <div class="heart-card" style="margin-top:34px;">
+            <span>
+              Банкет пройдёт<br>
+              там же —<br>
+              на площадке<br>
+              торжества
+            </span>
+          </div>
         </div>
       </section>
 
-      <section class="section fade">
-        <h2 class="heading hand dress-title">Дресс - код</h2>
-        <p class="small">
-          Мы будем очень рады, если в своих образах вы отдадите предпочтение
-          нежным пастельным оттенкам.
+      <section class="section timing fade">
+        <h2 class="title hand">Тайминг</h2>
+
+        <div class="timing-item">
+          <div class="timing-label">сбор гостей</div>
+          <div class="timing-time">16:00</div>
+        </div>
+
+        <div class="timing-item">
+          <div class="timing-label">церемония</div>
+          <div class="timing-time">16:30</div>
+        </div>
+
+        <div class="timing-item">
+          <div class="timing-label">банкет</div>
+          <div class="timing-time">17:00</div>
+        </div>
+
+        <div class="timing-item">
+          <div class="timing-label">торт</div>
+          <div class="timing-time">21:00</div>
+        </div>
+
+        <div class="timing-item">
+          <div class="timing-label">диджей сет</div>
+          <div class="timing-time">22:00</div>
+        </div>
+
+        <h2 class="title hand" style="margin-top:8px;">Пожелания</h2>
+
+        <div class="wish-number">#1</div>
+        <div class="wish-box">
+          Ваше присутствие для нас — огромная радость!<br>
+          А если вы захотите сделать подарок, будем благодарны за финансовую поддержку наших первых семейных шагов.
+        </div>
+
+        <div class="wish-number">#2</div>
+        <div class="wish-box alt">
+          Нам важно, чтобы этот вечер стал для вас особенным!<br>
+          Поэтому предлагаем вам провести его в кругу взрослых, а заботу о детях доверить вашим близким.
+        </div>
+
+        <div class="wish-number">#3</div>
+        <div class="wish-box alt2">
+          Самое главное для нас — ваши улыбки, хорошее настроение и тёплая атмосфера этого дня.
+        </div>
+      </section>
+
+      <section class="section dress-section fade">
+        <div class="big-flower"></div>
+
+        <h2 class="title hand">Дресс-код</h2>
+        <p class="text">
+          Этот день мы хотим наполнить светом, красотой и гармонией — и ваш образ может стать частью этой общей картины.
         </p>
 
         <div class="palette">
-          <div class="dot" style="background:#dfddd9"></div>
-          <div class="dot" style="background:#efe5d9"></div>
-          <div class="dot" style="background:#8d1622"></div>
-          <div class="dot" style="background:#181818"></div>
+          <span class="dot" style="background:#5f7b2c"></span>
+          <span class="dot" style="background:#b41d24"></span>
+          <span class="dot" style="background:#d87d1f"></span>
+          <span class="dot" style="background:#111"></span>
+          <span class="dot" style="background:#fff"></span>
         </div>
 
-        <div class="blob blob-right">
-          <div class="blob-title">Детали</div>
-          <div class="blob-text">
-            Самое главное для нас — ваше присутствие,
-            улыбки и тёплая атмосфера этого дня.
-            <br><br>
-            По всем вопросам можно связаться с нашим организатором.
-          </div>
-
-          <div class="contact">
-            Организатор Элина<br>
-            <a href="tel:+79136243383">+7 913 624 3383</a>
-          </div>
-
-          <div class="icons">
-            <span>☎️</span>
-            <span>✆</span>
+        <div class="film">
+          <div class="film-card">
+            <h2 class="title hand" style="font-size:32px; margin-bottom:8px;">Воспоминания</h2>
+            <div class="text" style="font-size:18px;">
+              Чтобы ни один трогательный момент этого дня не потерялся, мы создали Telegram-чат, где вы сможете делиться фотографиями и видео.
+            </div>
+            <a class="button" href="https://t.me/chatgostei" target="_blank" rel="noopener">присоединиться</a>
           </div>
         </div>
-      </section>
 
-      <section class="section fade">
-        <h2 class="heading hand guest-title">Чат<br>для гостей</h2>
-        <p class="small">
-          Присоединяйтесь к нашему телеграм-каналу с новостями
-          и делитесь фотографиями и видео с торжества.
-        </p>
-
-        <a class="btn" target="_blank" rel="noopener" href="https://t.me/chatgostei">
-          присоединиться
-        </a>
-      </section>
-
-      <section class="section fade">
-        <div class="blob blob-bottom">
-          <div class="blob-title">Анкета</div>
-          <div class="blob-text">
-            Мы хотим, чтобы у вас остались самые тёплые воспоминания
-            о нашей свадьбе. Просим вас заполнить анкету,
-            чтобы мы могли лучше организовать этот день.
-          </div>
-
-          <a class="btn btn-light" target="_blank" rel="noopener"
-             href="https://docs.google.com/forms/d/e/1FAIpQLSegnT85D6d_hxpnIIXGRkDu8o23IhzrHlPODOs59qT3kruG_w/viewform?usp=publish-editor">
+        <div class="form-box">
+          <h2 class="title hand">Анкета</h2>
+          <p class="text">
+            Для того чтобы подготовиться к торжеству, мы просим вас заполнить нашу анкету.
+          </p>
+          <a class="button-red" href="https://docs.google.com/forms/d/e/1FAIpQLSegnT85D6d_hxpnIIXGRkDu8o23IhzrHlPODOs59qT3kruG_w/viewform?usp=publish-editor" target="_blank" rel="noopener">
             заполнить анкету
           </a>
         </div>
-      </section>
 
-      <section class="section fade">
+        <div class="bottom-note hand hand-red">До встречи</div>
+
+        <div class="bottom-photo">
+          <img src="photo-2.jpg" alt="Александра и Максим">
+        </div>
+
         <div class="countdown">
           <div class="count"><strong id="days">0</strong><span>дней</span></div>
           <div class="count"><strong id="hours">0</strong><span>часов</span></div>
           <div class="count"><strong id="minutes">0</strong><span>минут</span></div>
           <div class="count"><strong id="seconds">0</strong><span>секунд</span></div>
-        </div>
-
-        <div class="gallery">
-          <img src="photo-3.png" alt="Фото 1">
-          <img src="photo-4.png" alt="Фото 2">
-          <img src="photo-5.png" alt="Фото 3">
-          <img src="photo-1.png" alt="Фото 4">
-        </div>
-      </section>
-
-      <section class="section footer fade">
-        <div class="footer-blob">
-          <h2 class="footer-title">До встречи!</h2>
         </div>
       </section>
 
@@ -618,11 +654,9 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("show");
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll(".fade").forEach(el => observer.observe(el));
   </script>
