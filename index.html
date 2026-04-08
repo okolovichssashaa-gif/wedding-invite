@@ -403,12 +403,11 @@
       position:relative;
       padding:26px 18px 22px;
       overflow:hidden;
-      min-height:760px;
     }
 
     .timing-top{
       position:relative;
-      min-height:520px;
+      min-height:430px;
       margin:0 -18px 0 -18px;
       padding:0 18px;
       overflow:hidden;
@@ -422,7 +421,7 @@
 
     .timing-item{
       text-align:center;
-      margin:0 0 18px;
+      margin:0 0 14px;
       position:relative;
       z-index:2;
     }
@@ -448,38 +447,37 @@
       position:absolute;
       z-index:1;
       pointer-events:none;
-      opacity:.98;
+      opacity:.96;
     }
 
-    /* Только внутри части Тайминг */
     .dove{
-      width:86px;
-      left:0;
-      top:108px;
+      width:72px;
+      left:8px;
+      top:92px;
     }
 
     .vase{
-      width:92px;
-      right:0;
-      top:118px;
+      width:70px;
+      right:8px;
+      top:110px;
     }
 
     .glasses{
-      width:82px;
-      left:0;
-      top:312px;
+      width:64px;
+      left:8px;
+      top:258px;
     }
 
     .candles{
-      width:92px;
-      right:0;
-      top:372px;
+      width:72px;
+      right:8px;
+      top:302px;
     }
 
     .cake{
-      width:108px;
-      left:0;
-      bottom:0;
+      width:82px;
+      left:8px;
+      top:300px;
     }
 
     .wishes{
@@ -650,19 +648,18 @@
       margin-top:10px;
       overflow:hidden;
       position:relative;
-      min-height:320px;
+      min-height:360px;
       display:flex;
       align-items:flex-end;
       justify-content:center;
     }
 
     .bottom-photo img{
-      width:115%;
+      width:128%;
       max-width:none;
       height:auto;
       object-fit:contain;
-      filter:none;
-      transform:translateY(8px);
+      transform:translateY(6px);
     }
 
     .countdown{
@@ -707,15 +704,14 @@
 
     @media (max-width:390px){
       .kids-title{ font-size:40px; }
-      .timing{ min-height:730px; }
       .timing-top{ min-height:500px; }
-      .dove{ width:80px; top:112px; }
-      .vase{ width:86px; top:122px; }
-      .glasses{ width:76px; top:316px; }
-      .candles{ width:86px; top:380px; }
-      .cake{ width:100px; }
-      .bottom-photo{ min-height:300px; }
-      .bottom-photo img{ width:118%; }
+      .dove{ width:68px; left:6px; top:94px; }
+      .vase{ width:66px; right:6px; top:112px; }
+      .glasses{ width:60px; left:6px; top:272px; }
+      .candles{ width:68px; right:6px; top:318px; }
+      .cake{ width:78px; left:6px; top:314px; }
+      .bottom-photo{ min-height:320px; }
+      .bottom-photo img{ width:132%; }
     }
   </style>
 </head>
@@ -812,8 +808,8 @@
           <img class="timing-decor dove" src="dove.png" alt="">
           <img class="timing-decor vase" src="vase.png" alt="">
           <img class="timing-decor glasses" src="glasses.png" alt="">
-          <img class="timing-decor candles" src="candles.png" alt="">
           <img class="timing-decor cake" src="cake.png" alt="">
+          <img class="timing-decor candles" src="candles.png" alt="">
 
           <h2 class="title hand">Тайминг</h2>
 
