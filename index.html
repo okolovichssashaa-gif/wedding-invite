@@ -12,25 +12,19 @@
 
   <style>
     :root{
-      --bg:#5d6d35;
-      --bg-dark:#4d5a2c;
-      --card:#f5edde;
-      --card-2:#f7f1e7;
-      --card-3:#f8f3ea;
-      --red:#b5383b;
-      --red-dark:#9f2d30;
-      --red-soft:#d7a6a8;
-      --green-text:#5b6a37;
-      --text:#556038;
-      --gold:#c5a74f;
-      --line:#e7d5d1;
-      --shadow:0 14px 30px rgba(0,0,0,.14);
-      --soft-shadow:0 10px 24px rgba(120, 40, 40, .10);
-      --radius:26px;
+      --bg:#5c6d34;
+      --bg-dark:#4c5a2d;
+      --card:#f4edde;
+      --card-2:#f7f1e6;
+      --red:#b52a30;
+      --green-text:#586735;
+      --text:#4e5c2d;
+      --shadow:0 12px 28px rgba(0,0,0,.14);
+      --gold:#c7a84d;
     }
 
-    *{ box-sizing:border-box; }
-    html{ scroll-behavior:smooth; }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
 
     body{
       margin:0;
@@ -39,13 +33,13 @@
       background:
         radial-gradient(circle at 20% 10%, rgba(255,255,255,.10), transparent 18%),
         radial-gradient(circle at 80% 0%, rgba(255,255,255,.08), transparent 22%),
-        radial-gradient(circle at 50% 80%, rgba(255,255,255,.06), transparent 28%),
+        radial-gradient(circle at 50% 80%, rgba(255,255,255,.07), transparent 28%),
         linear-gradient(180deg, var(--bg) 0%, var(--bg-dark) 100%);
-      background-attachment:fixed;
+      background-attachment: fixed;
     }
 
-    img{ display:block; width:100%; }
-    a{ color:inherit; text-decoration:none; }
+    img{display:block;width:100%}
+    a{color:inherit;text-decoration:none}
 
     .page{
       width:min(100%, 390px);
@@ -54,15 +48,11 @@
     }
 
     .panel{
-      position:relative;
+      background:var(--card);
+      box-shadow:var(--shadow);
       min-height:100vh;
       overflow:hidden;
-      background:
-        linear-gradient(rgba(255,255,255,.05), rgba(255,255,255,.05)),
-        radial-gradient(circle at 10% 10%, rgba(255,255,255,.16), transparent 12%),
-        radial-gradient(circle at 80% 24%, rgba(181,56,59,.04), transparent 18%),
-        linear-gradient(180deg, var(--card) 0%, #f3ebdc 100%);
-      box-shadow:var(--shadow);
+      position:relative;
     }
 
     .panel::before{
@@ -70,82 +60,32 @@
       position:absolute;
       inset:0;
       pointer-events:none;
-      opacity:.14;
-      background-image:
-        linear-gradient(transparent 96%, rgba(120,90,70,.08) 100%),
-        radial-gradient(circle at 30% 20%, rgba(140,110,90,.08) 0 1px, transparent 1px),
-        radial-gradient(circle at 70% 80%, rgba(140,110,90,.08) 0 1px, transparent 1px);
-      background-size:100% 5px, 24px 24px, 28px 28px;
-      mix-blend-mode:multiply;
+      background:
+        radial-gradient(circle at 10% 5%, rgba(181,42,48,.06), transparent 10%),
+        radial-gradient(circle at 90% 18%, rgba(88,103,53,.06), transparent 13%),
+        radial-gradient(circle at 14% 66%, rgba(181,42,48,.05), transparent 11%),
+        radial-gradient(circle at 88% 90%, rgba(88,103,53,.05), transparent 12%);
     }
 
     .section{
       position:relative;
-      padding:20px 18px 24px;
+      padding:18px 18px 22px;
       overflow:hidden;
-    }
-
-    .section::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      pointer-events:none;
-      opacity:.18;
-    }
-
-    .motif-hearts::after{
-      background:
-        radial-gradient(circle at 12% 18%, rgba(181,56,59,.10) 0 2px, transparent 3px),
-        radial-gradient(circle at 82% 12%, rgba(181,56,59,.08) 0 2px, transparent 3px),
-        radial-gradient(circle at 16% 82%, rgba(181,56,59,.08) 0 2px, transparent 3px);
-    }
-
-    .motif-route::after{
-      background:
-        radial-gradient(circle at 12% 22%, rgba(181,56,59,.10) 0 2px, transparent 3px),
-        radial-gradient(circle at 86% 72%, rgba(181,56,59,.10) 0 2px, transparent 3px);
-    }
-
-    .motif-timing::after{
-      background:
-        radial-gradient(circle at 8% 22%, rgba(181,56,59,.08) 0 2px, transparent 3px),
-        radial-gradient(circle at 90% 16%, rgba(181,56,59,.08) 0 2px, transparent 3px),
-        radial-gradient(circle at 14% 90%, rgba(181,56,59,.07) 0 2px, transparent 3px);
-    }
-
-    .motif-wishes::after{
-      background:
-        radial-gradient(circle at 90% 15%, rgba(197,167,79,.14) 0 2px, transparent 3px),
-        radial-gradient(circle at 15% 80%, rgba(197,167,79,.10) 0 2px, transparent 3px);
-    }
-
-    .motif-form::after{
-      background:
-        radial-gradient(circle at 12% 15%, rgba(181,56,59,.08) 0 2px, transparent 3px),
-        radial-gradient(circle at 88% 14%, rgba(181,56,59,.08) 0 2px, transparent 3px);
     }
 
     .ornament-top,
     .ornament-bottom{
       text-align:center;
       color:var(--red);
-      font-size:24px;
+      font-size:22px;
       letter-spacing:2px;
       line-height:1;
-      opacity:.88;
+      opacity:.85;
       font-family:"Caveat", cursive;
     }
 
-    .ornament-top{ margin-bottom:10px; }
-    .ornament-bottom{ margin-top:14px; }
-
-    .stars-divider{
-      text-align:center;
-      color:var(--gold);
-      letter-spacing:8px;
-      font-size:24px;
-      margin:14px 0 8px;
-    }
+    .ornament-top{ margin-bottom:8px; }
+    .ornament-bottom{ margin-top:12px; }
 
     .hand{
       font-family:"Caveat", cursive;
@@ -156,29 +96,20 @@
 
     .hand-red{ color:var(--red); }
 
-    .section-title{
-      margin:0 0 14px;
-      text-align:center;
-      font-size:38px;
-      line-height:.95;
-    }
-
     .hero{
-      padding:18px 16px 16px;
+      padding:16px 16px 14px;
     }
 
     .kids-note{
       text-align:center;
-      margin:0 0 12px;
-      position:relative;
-      z-index:2;
+      margin:2px 0 10px;
     }
 
     .kids-title{
       margin:0;
       font-family:"Caveat", cursive;
       color:var(--green-text);
-      font-size:46px;
+      font-size:44px;
       line-height:.95;
       font-weight:700;
     }
@@ -229,50 +160,23 @@
       z-index:4;
     }
 
-    .hero-floating-hearts{
-      position:absolute;
-      inset:130px 8px auto 8px;
-      pointer-events:none;
-      z-index:1;
-    }
-
-    .hero-floating-hearts span{
-      position:absolute;
-      color:var(--red);
-      opacity:.85;
-      font-size:22px;
-      font-family:"Caveat", cursive;
-      filter:drop-shadow(0 2px 2px rgba(160,40,40,.10));
-    }
-
-    .hero-floating-hearts span:nth-child(1){ left:18px; top:22px; transform:rotate(-8deg); }
-    .hero-floating-hearts span:nth-child(2){ left:72px; top:4px; font-size:18px; }
-    .hero-floating-hearts span:nth-child(3){ right:64px; top:10px; font-size:18px; }
-    .hero-floating-hearts span:nth-child(4){ right:18px; top:18px; }
-    .hero-floating-hearts span:nth-child(5){ left:42px; bottom:24px; font-size:18px; }
-    .hero-floating-hearts span:nth-child(6){ right:34px; bottom:34px; font-size:18px; }
-
     .hero-photo-wrap{
       position:relative;
-      padding:12px;
-      border:3px solid rgba(215,166,168,.42);
-      border-radius:30px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.48), rgba(255,255,255,.24));
-      box-shadow:var(--soft-shadow);
-      overflow:hidden;
+      padding:10px;
+      border:2px solid rgba(181,42,48,.18);
+      border-radius:28px 28px 18px 18px;
+      background:rgba(255,255,255,.4);
     }
 
     .hero-photo-wrap::before,
     .hero-photo-wrap::after{
       content:"♥";
       position:absolute;
-      top:10px;
+      top:8px;
       font-size:18px;
       color:var(--red);
-      opacity:.75;
+      opacity:.8;
       font-family:"Caveat", cursive;
-      z-index:3;
     }
 
     .hero-photo-wrap::before{ left:10px; }
@@ -280,9 +184,9 @@
 
     .hero-photo{
       position:relative;
-      border-radius:24px;
+      border-radius:20px 20px 24px 24px;
       overflow:hidden;
-      background:#ddd8ce;
+      background:#ddd;
       aspect-ratio:4/5;
     }
 
@@ -290,85 +194,89 @@
       width:100%;
       height:100%;
       object-fit:cover;
+      filter:grayscale(.03) contrast(1.02) brightness(1.01);
     }
 
     .hero-overlay{
       position:absolute;
       inset:0;
-      background:linear-gradient(to top, rgba(0,0,0,.08), rgba(0,0,0,0) 45%);
+      background:linear-gradient(to top, rgba(0,0,0,.12), rgba(0,0,0,0) 45%);
     }
 
     .hero-date{
       position:absolute;
       left:50%;
-      bottom:18px;
+      bottom:12px;
       transform:translateX(-50%);
       background:var(--bg);
       color:#fff;
       font-family:"Caveat", cursive;
-      font-size:25px;
+      font-size:24px;
       line-height:1;
-      padding:10px 20px;
+      padding:8px 18px;
       border-radius:999px;
       white-space:nowrap;
-      box-shadow:0 8px 18px rgba(0,0,0,.15);
-      z-index:3;
+      box-shadow:0 6px 14px rgba(0,0,0,.14);
     }
 
     .hearts{
       text-align:center;
       color:var(--red);
-      font-size:24px;
-      letter-spacing:10px;
-      margin:14px 0 2px;
+      font-size:22px;
+      letter-spacing:7px;
+      margin:8px 0 0;
       line-height:1;
     }
 
-    .text-frame{
-      position:relative;
-      border:2px solid rgba(215,166,168,.48);
-      border-radius:24px;
-      padding:18px 16px;
-      background:rgba(255,255,255,.22);
-      box-shadow:0 8px 20px rgba(120,40,40,.05);
-    }
-
-    .text-frame::before,
-    .text-frame::after{
-      content:"";
-      position:absolute;
-      width:34px;
-      height:34px;
-      border-color:rgba(181,56,59,.45);
-      border-style:solid;
-      opacity:.5;
-    }
-
-    .text-frame::before{
-      top:10px; left:12px;
-      border-width:3px 0 0 3px;
-    }
-
-    .text-frame::after{
-      right:12px; bottom:10px;
-      border-width:0 3px 3px 0;
+    .title{
+      margin:0 0 10px;
+      text-align:center;
+      font-size:34px;
     }
 
     .text{
       text-align:center;
       font-size:19px;
-      line-height:1.08;
-      max-width:290px;
+      line-height:1.05;
+      max-width:270px;
       margin:0 auto;
     }
 
+    .frame{
+      position:relative;
+      border:1.5px solid rgba(181,42,48,.22);
+      border-radius:18px;
+      padding:14px 12px;
+      background:rgba(255,255,255,.20);
+    }
+
+    .frame::before,
+    .frame::after{
+      content:"";
+      position:absolute;
+      width:26px;
+      height:26px;
+      border-color:var(--red);
+      border-style:solid;
+      opacity:.35;
+    }
+
+    .frame::before{
+      top:8px; left:8px;
+      border-width:2px 0 0 2px;
+    }
+
+    .frame::after{
+      right:8px; bottom:8px;
+      border-width:0 2px 2px 0;
+    }
+
     .calendar-wrap{
-      margin-top:18px;
+      margin-top:16px;
       padding:14px;
       border:3px solid var(--red);
       position:relative;
       background:#f7f1e5;
-      box-shadow:0 8px 20px rgba(120,40,40,.06);
     }
 
     .calendar-wrap::before,
@@ -376,18 +284,18 @@
       content:"";
       position:absolute;
       top:-10px;
-      width:96px;
+      width:58px;
       height:18px;
-      border-top:4px solid var(--red);
+      border-top:3px solid var(--red);
     }
 
-    .calendar-wrap::before{ left:28px; }
-    .calendar-wrap::after{ right:28px; }
+    .calendar-wrap::before{left:16px}
+    .calendar-wrap::after{right:16px}
 
     .calendar-title{
       text-align:center;
       font-family:"Caveat", cursive;
-      font-size:38px;
+      font-size:34px;
       color:var(--green-text);
       margin-bottom:8px;
       line-height:1;
@@ -396,7 +304,7 @@
     .calendar-grid{
       display:grid;
       grid-template-columns:repeat(7,1fr);
-      gap:8px 6px;
+      gap:6px;
       text-align:center;
       color:#263115;
       font-size:13px;
@@ -412,7 +320,7 @@
     .calendar-grid .mark{
       width:18px;
       height:18px;
-      margin:0 auto;
+      margin:2px auto 0;
       border-radius:50%;
       background:var(--red);
       color:#fff;
@@ -422,20 +330,32 @@
       font-weight:700;
       font-size:11px;
       line-height:1;
-      box-shadow:0 4px 10px rgba(120,0,0,.14);
+    }
+
+    .divider-lights{
+      text-align:center;
+      color:var(--gold);
+      letter-spacing:6px;
+      margin-top:12px;
+      font-size:22px;
+    }
+
+    .location-title{
+      margin-top:14px;
+      margin-bottom:12px;
     }
 
     .route-card{
       position:relative;
       margin:0 auto;
-      max-width:322px;
+      max-width:320px;
       background:
-        linear-gradient(180deg, rgba(255,255,255,.34), rgba(255,255,255,.12)),
-        rgba(255,255,255,.30);
-      border:2px solid rgba(215,166,168,.42);
-      border-radius:30px;
+        linear-gradient(180deg, rgba(255,255,255,.36), rgba(255,255,255,.08)),
+        rgba(255,255,255,.26);
+      border:2px solid rgba(181,42,48,.18);
+      border-radius:28px;
       padding:18px 16px 16px;
-      box-shadow:0 10px 24px rgba(120,40,40,.08);
+      box-shadow:0 10px 24px rgba(0,0,0,.08);
       overflow:hidden;
     }
 
@@ -444,94 +364,87 @@
       position:absolute;
       top:14px;
       bottom:14px;
-      left:38px;
-      width:3px;
+      left:34px;
+      width:2px;
       background:
         repeating-linear-gradient(
           to bottom,
-          rgba(181,56,59,.55) 0 8px,
-          transparent 8px 18px
+          rgba(181,42,48,.6) 0 8px,
+          transparent 8px 16px
         );
       opacity:.7;
-      border-radius:2px;
     }
 
     .route-step{
       position:relative;
-      padding-left:50px;
-      min-height:86px;
+      padding-left:42px;
+      min-height:82px;
       display:flex;
       align-items:center;
     }
 
     .route-step + .route-step{
-      margin-top:14px;
+      margin-top:10px;
     }
 
     .route-dot{
       position:absolute;
-      left:25px;
+      left:21px;
       top:50%;
       transform:translate(-50%, -50%);
-      width:30px;
-      height:30px;
+      width:26px;
+      height:26px;
       border-radius:50%;
       background:var(--red);
-      border:5px solid #f7efe3;
-      box-shadow:0 4px 12px rgba(120,0,0,.16);
+      border:4px solid #f7efe3;
+      box-shadow:0 3px 10px rgba(120,0,0,.14);
     }
 
     .route-box{
       width:100%;
-      border-radius:28px;
-      padding:16px 16px 15px;
-      text-align:center;
-      box-shadow:0 10px 20px rgba(120,0,0,.10);
-    }
-
-    .route-box.invite{
       background:var(--red);
       color:#fff8f3;
+      border-radius:22px;
+      padding:14px 16px;
+      text-align:center;
+      box-shadow:0 8px 18px rgba(100,0,0,.10);
     }
 
-    .route-box.address{
-      background:#fff8f2;
+    .route-box.soft{
+      background:#fff7f1;
       color:var(--red);
-      border:2px solid rgba(215,166,168,.42);
-      box-shadow:0 10px 20px rgba(120,40,40,.06);
+      border:2px solid rgba(181,42,48,.18);
     }
 
     .route-label{
       display:block;
       font-family:"Caveat", cursive;
-      font-size:32px;
+      font-size:30px;
       line-height:.9;
       margin-bottom:6px;
     }
 
     .route-text{
       font-size:19px;
-      line-height:1.06;
+      line-height:1.05;
     }
 
     .route-place{
-      margin-top:8px;
-      font-size:26px;
+      margin-top:6px;
+      font-size:25px;
       line-height:1;
       font-weight:700;
       font-family:"Caveat", cursive;
     }
 
     .timing{
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04)),
-        var(--card-2);
-      padding:28px 18px 24px;
+      background:var(--card-2);
+      padding:26px 18px 22px;
     }
 
     .timing-grid{
       display:grid;
-      grid-template-columns:72px 1fr 72px;
+      grid-template-columns:70px 1fr 70px;
       gap:8px;
       align-items:start;
     }
@@ -539,7 +452,7 @@
     .timing-left,
     .timing-right{
       display:grid;
-      grid-template-rows:128px 128px 128px;
+      grid-template-rows:120px 120px 120px;
       align-items:start;
       justify-items:center;
     }
@@ -550,15 +463,14 @@
       width:auto;
       height:auto;
       max-width:100%;
-      filter:drop-shadow(0 4px 10px rgba(120,40,40,.06));
     }
 
-    .timing-left .dove{ width:66px; align-self:start; }
-    .timing-left .glasses{ width:58px; align-self:center; }
-    .timing-left .cake{ width:76px; align-self:end; }
+    .timing-left .dove{ width:64px; align-self:start; }
+    .timing-left .glasses{ width:56px; align-self:center; }
+    .timing-left .cake{ width:74px; align-self:end; }
 
-    .timing-right .vase{ width:66px; align-self:start; margin-top:24px; }
-    .timing-right .candles{ width:66px; align-self:end; margin-top:10px; }
+    .timing-right .vase{ width:64px; align-self:start; margin-top:26px; }
+    .timing-right .candles{ width:64px; align-self:end; margin-top:10px; }
 
     .timing-right .spacer{
       width:1px;
@@ -567,87 +479,82 @@
 
     .timing-center{
       text-align:center;
-      padding:0 2px;
+      padding:0 4px;
     }
 
     .timing-item{
       margin:0 0 14px;
     }
 
+    .timing-item:last-child{
+      margin-bottom:0;
+    }
+
     .timing-label{
-      font-size:20px;
+      font-size:18px;
       line-height:1;
-      margin-bottom:4px;
+      margin-bottom:2px;
     }
 
     .timing-time{
-      font-size:42px;
-      line-height:.92;
+      font-size:39px;
+      line-height:.9;
       font-weight:700;
       color:var(--green-text);
     }
 
     .wishes{
-      margin-top:14px;
+      margin-top:12px;
     }
 
     .wish-number{
       font-family:"Caveat", cursive;
-      font-size:36px;
+      font-size:34px;
       line-height:1;
       color:var(--green-text);
-      margin:14px 0 8px;
+      margin:12px 0 6px;
     }
 
     .wish-box{
-      position:relative;
       background:var(--red);
       color:#fff8f4;
-      border-radius:30px;
-      padding:20px 18px;
-      font-size:20px;
-      line-height:1.04;
+      border-radius:22px;
+      padding:18px 16px;
+      font-size:18px;
+      line-height:1.02;
       text-align:center;
-      box-shadow:0 14px 24px rgba(120,0,0,.10);
-      overflow:hidden;
+      box-shadow:0 8px 18px rgba(100,0,0,.12);
+      position:relative;
     }
 
     .wish-box::before{
       content:"✦";
       position:absolute;
-      top:10px;
-      right:12px;
-      color:rgba(255,255,255,.42);
-      font-size:20px;
-    }
-
-    .wish-box::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
-      pointer-events:none;
+      top:8px;
+      right:10px;
+      color:rgba(255,255,255,.4);
+      font-size:18px;
     }
 
     .wish-box.alt{
-      border-radius:36px;
-      transform:rotate(-2.2deg);
+      border-radius:34px;
+      transform:rotate(-3deg);
     }
 
     .wish-box.alt2{
-      border-radius:30px;
+      border-radius:28px;
+      padding:18px 20px;
     }
 
     .dress-section{
       background:var(--card);
-      padding-top:14px;
+      padding-top:10px;
     }
 
     .dress-flower-zone{
       position:relative;
-      height:530px;
-      margin:0 -18px 20px;
+      height:520px;
+      margin:0 -18px 18px;
       overflow:hidden;
     }
 
@@ -658,15 +565,14 @@
       bottom:0;
       transform:translateX(-50%);
       max-width:none;
-      filter:drop-shadow(0 10px 14px rgba(120,0,0,.06));
     }
 
     .dress-content{
       position:absolute;
       left:50%;
-      top:148px;
+      top:155px;
       transform:translateX(-50%);
-      width:234px;
+      width:230px;
       text-align:center;
       color:#fffaf5;
       z-index:2;
@@ -675,7 +581,7 @@
     .dress-title{
       margin:0 0 10px;
       font-family:"Caveat", cursive;
-      font-size:44px;
+      font-size:42px;
       line-height:.9;
       color:#fffaf5;
       text-shadow:0 2px 4px rgba(90,0,0,.18);
@@ -683,7 +589,7 @@
 
     .dress-text{
       margin:0;
-      font-size:20px;
+      font-size:19px;
       line-height:1.05;
       color:#fffaf5;
       text-shadow:0 2px 4px rgba(90,0,0,.18);
@@ -694,14 +600,14 @@
       justify-content:center;
       gap:8px;
       flex-wrap:wrap;
-      margin-top:16px;
+      margin-top:14px;
     }
 
     .dress-dot{
-      width:19px;
-      height:19px;
+      width:18px;
+      height:18px;
       border-radius:50%;
-      border:2px solid rgba(255,255,255,.52);
+      border:2px solid rgba(255,255,255,.48);
       display:inline-block;
       box-shadow:0 1px 4px rgba(0,0,0,.10);
     }
@@ -711,12 +617,11 @@
       background:
         linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x top/48px 10px,
         linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x bottom/48px 10px,
-        #bb403f;
+        #bb2d30;
       padding:18px 14px;
-      border-top:8px solid #c55352;
-      border-bottom:8px solid #c55352;
+      border-top:8px solid #c54646;
+      border-bottom:8px solid #c54646;
       position:relative;
-      box-shadow:0 8px 20px rgba(120,40,40,.08);
     }
 
     .film::before{
@@ -731,61 +636,39 @@
 
     .film-card{
       background:var(--card);
-      border-radius:22px;
-      padding:18px 14px;
+      border-radius:14px;
+      padding:14px 12px;
       text-align:center;
     }
 
     .button{
       display:inline-block;
-      margin-top:12px;
-      padding:12px 18px;
-      border:3px solid var(--red);
+      margin-top:10px;
+      padding:10px 16px;
+      border:2px solid var(--red);
       color:var(--red);
-      background:#fffaf4;
-      border-radius:16px;
+      background:#fff9f2;
+      border-radius:10px;
       font-size:14px;
       font-weight:700;
-      box-shadow:0 6px 14px rgba(0,0,0,.08);
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
     }
 
     .button-red{
       display:inline-block;
       margin-top:12px;
-      padding:13px 20px;
+      padding:11px 18px;
       background:var(--red);
       color:#fff;
-      border-radius:12px;
+      border-radius:8px;
       font-size:14px;
       font-weight:700;
-      box-shadow:0 8px 16px rgba(100,0,0,.14);
-      transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
-    }
-
-    .button:hover,
-    .button-red:hover{
-      transform:translateY(-2px);
-    }
-
-    .button:active,
-    .button-red:active{
-      transform:translateY(0);
-    }
-
-    .button:hover{
-      background:#fff3ec;
-      box-shadow:0 10px 18px rgba(100,0,0,.10);
-    }
-
-    .button-red:hover{
-      background:var(--red-dark);
-      box-shadow:0 10px 18px rgba(100,0,0,.16);
+      box-shadow:0 6px 12px rgba(100,0,0,.14);
     }
 
     .form-box{
       text-align:center;
-      margin-top:20px;
+      margin-top:18px;
       position:relative;
     }
 
@@ -794,61 +677,51 @@
       content:"♥";
       position:absolute;
       top:-4px;
-      font-size:18px;
-      color:rgba(181,56,59,.75);
+      font-size:16px;
+      color:rgba(179,39,45,.65);
       font-family:"Caveat", cursive;
     }
 
-    .form-box::before{ left:24px; }
-    .form-box::after{ right:24px; }
+    .form-box::before{ left:28px; }
+    .form-box::after{ right:28px; }
 
     .bottom-note{
       text-align:center;
-      margin-top:16px;
-      font-size:42px;
+      margin-top:14px;
+      font-size:38px;
     }
 
     .bottom-photo{
       margin-top:10px;
       overflow:hidden;
       position:relative;
-      min-height:380px;
+      min-height:360px;
       display:flex;
       align-items:flex-end;
       justify-content:center;
     }
 
     .bottom-photo img{
-      width:130%;
+      width:128%;
       max-width:none;
       height:auto;
       object-fit:contain;
-      transform:translateY(8px);
-      filter:drop-shadow(0 8px 12px rgba(90,90,30,.06));
-    }
-
-    .countdown-divider{
-      text-align:center;
-      color:var(--gold);
-      letter-spacing:8px;
-      font-size:22px;
-      margin:8px 0 10px;
+      transform:translateY(6px);
     }
 
     .countdown{
       display:grid;
       grid-template-columns:repeat(4,1fr);
-      gap:10px;
+      gap:8px;
       margin-top:12px;
       text-align:center;
     }
 
     .count{
-      background:rgba(255,255,255,.36);
-      border-radius:18px;
-      padding:10px 4px;
-      border:2px solid rgba(215,166,168,.28);
-      box-shadow:0 8px 18px rgba(120,40,40,.06);
+      background:rgba(255,255,255,.32);
+      border-radius:14px;
+      padding:8px 4px;
+      border:1px solid rgba(179,39,45,.10);
     }
 
     .count strong{
@@ -860,15 +733,15 @@
 
     .count span{
       display:block;
-      margin-top:4px;
+      margin-top:2px;
       font-size:11px;
-      color:#6d744d;
+      color:#677146;
     }
 
     .fade{
       opacity:0;
-      transform:translateY(22px);
-      transition:opacity .85s ease, transform .85s ease;
+      transform:translateY(18px);
+      transition:.7s ease;
     }
 
     .fade.show{
@@ -877,39 +750,35 @@
     }
 
     @media (max-width:390px){
-      .kids-title{ font-size:42px; }
-
-      .hero-floating-hearts{
-        inset:126px 6px auto 6px;
-      }
-
-      .section-title{
-        font-size:36px;
-      }
+      .kids-title{ font-size:40px; }
 
       .route-card{
-        max-width:312px;
+        max-width:310px;
         padding:16px 14px 14px;
       }
 
-      .route-card::before{
-        left:34px;
-      }
-
       .route-step{
-        min-height:80px;
-        padding-left:46px;
+        min-height:78px;
+        padding-left:40px;
       }
 
       .route-dot{
-        width:28px;
-        height:28px;
-        left:23px;
+        width:24px;
+        height:24px;
+        left:20px;
       }
 
-      .route-label{ font-size:30px; }
-      .route-text{ font-size:18px; }
-      .route-place{ font-size:24px; }
+      .route-label{
+        font-size:28px;
+      }
+
+      .route-text{
+        font-size:18px;
+      }
+
+      .route-place{
+        font-size:23px;
+      }
 
       .timing-grid{
         grid-template-columns:64px 1fr 64px;
@@ -918,17 +787,17 @@
 
       .timing-left,
       .timing-right{
-        grid-template-rows:120px 120px 120px;
+        grid-template-rows:114px 114px 114px;
       }
 
       .timing-left .dove{ width:58px; }
       .timing-left .glasses{ width:50px; }
-      .timing-left .cake{ width:70px; }
+      .timing-left .cake{ width:68px; }
       .timing-right .vase{ width:58px; }
       .timing-right .candles{ width:58px; }
 
       .dress-flower-zone{
-        height:500px;
+        height:485px;
       }
 
       .dress-flower-img{
@@ -937,12 +806,13 @@
       }
 
       .dress-content{
+        left:50%;
         top:145px;
-        width:224px;
+        width:220px;
       }
 
       .dress-title{
-        font-size:40px;
+        font-size:38px;
       }
 
       .dress-text{
@@ -950,17 +820,12 @@
       }
 
       .dress-dot{
-        width:17px;
-        height:17px;
+        width:16px;
+        height:16px;
       }
 
-      .bottom-photo{
-        min-height:340px;
-      }
-
-      .bottom-photo img{
-        width:134%;
-      }
+      .bottom-photo{ min-height:320px; }
+      .bottom-photo img{ width:132%; }
     }
   </style>
 </head>
@@ -968,13 +833,12 @@
   <main class="page">
     <div class="panel">
 
-      <section class="section hero motif-hearts fade">
+      <section class="section hero fade">
         <div class="ornament-top">༺❦༻</div>
 
         <div class="kids-note">
           <h1 class="kids-title">
-            <span class="line">Александра + Максим</span>
-            <span class="line">=</span>
+            <span class="line">Александра + Максим =</span>
             <span class="line hand-red">
               <span class="love-word">
                 <span>любо</span>
@@ -989,18 +853,9 @@
           </h1>
         </div>
 
-        <div class="hero-floating-hearts" aria-hidden="true">
-          <span>♥</span>
-          <span>♥</span>
-          <span>♥</span>
-          <span>♥</span>
-          <span>♥</span>
-          <span>♥</span>
-        </div>
-
         <div class="hero-photo-wrap">
           <div class="hero-photo">
-            <img src="photo-1.jpg" alt="Александра и Максим в детстве">
+            <img src="photo-1.jpg" alt="Александра и Максим">
             <div class="hero-overlay"></div>
             <div class="hero-date">06 августа 2026 года</div>
           </div>
@@ -1009,10 +864,10 @@
         <div class="hearts">♥ ♥ ♥ ♥ ♥</div>
       </section>
 
-      <section class="section motif-hearts fade">
-        <h2 class="section-title hand hand-red">Узнали?</h2>
+      <section class="section fade">
+        <h2 class="title hand hand-red">Узнали?</h2>
 
-        <div class="text-frame">
+        <div class="frame">
           <p class="text">
             Время пронеслось незаметно, и у этих двух малышей скоро свадьба!<br>
             Да-да, мы сами в шоке!
@@ -1033,14 +888,14 @@
           </div>
         </div>
 
-        <div class="stars-divider">✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
+        <div class="divider-lights">✦ ✦ ✦ ✦ ✦ ✦ ✦</div>
 
-        <h2 class="section-title hand location-title">Локация</h2>
+        <h2 class="title hand location-title">Локация</h2>
 
         <div class="route-card">
           <div class="route-step">
             <span class="route-dot"></span>
-            <div class="route-box invite">
+            <div class="route-box">
               <span class="route-label">Приглашение</span>
               <div class="route-text">
                 Ждём вас разделить этот важный день вместе с нами
@@ -1050,7 +905,7 @@
 
           <div class="route-step">
             <span class="route-dot"></span>
-            <div class="route-box address">
+            <div class="route-box soft">
               <span class="route-label">Адрес</span>
               <div class="route-text">
                 Москва, МО, д. Голиково,<br>
@@ -1064,8 +919,8 @@
         <div class="ornament-bottom">❦ ❦ ❦</div>
       </section>
 
-      <section class="section timing motif-timing fade">
-        <h2 class="section-title hand">Тайминг</h2>
+      <section class="section timing fade">
+        <h2 class="title hand">Тайминг</h2>
 
         <div class="timing-grid">
           <div class="timing-left">
@@ -1108,8 +963,8 @@
           </div>
         </div>
 
-        <div class="wishes motif-wishes">
-          <h2 class="section-title hand">Пожелания</h2>
+        <div class="wishes">
+          <h2 class="title hand">Пожелания</h2>
 
           <div class="wish-number">#1</div>
           <div class="wish-box">
@@ -1129,7 +984,7 @@
         </div>
       </section>
 
-      <section class="section dress-section motif-form fade">
+      <section class="section dress-section fade">
         <div class="dress-flower-zone">
           <img class="dress-flower-img" src="dress-flower.png" alt="Дресс-код">
 
@@ -1153,8 +1008,8 @@
 
         <div class="film">
           <div class="film-card">
-            <h2 class="section-title hand" style="font-size:34px; margin-bottom:8px;">Воспоминания</h2>
-            <div class="text" style="font-size:20px;">
+            <h2 class="title hand" style="font-size:32px; margin-bottom:8px;">Воспоминания</h2>
+            <div class="text" style="font-size:18px;">
               Чтобы ни один трогательный момент этого дня не потерялся, мы создали Telegram-чат, где вы сможете делиться фотографиями и видео.
             </div>
             <a class="button" href="https://t.me/chatgostei" target="_blank" rel="noopener">присоединиться</a>
@@ -1162,7 +1017,7 @@
         </div>
 
         <div class="form-box">
-          <h2 class="section-title hand">Анкета</h2>
+          <h2 class="title hand">Анкета</h2>
           <p class="text">
             Для того чтобы подготовиться к торжеству, мы просим вас заполнить нашу анкету.
           </p>
@@ -1176,8 +1031,6 @@
         <div class="bottom-photo">
           <img src="photo-2.png" alt="Александра и Максим">
         </div>
-
-        <div class="countdown-divider">✦ ✦ ✦</div>
 
         <div class="countdown">
           <div class="count"><strong id="days">0</strong><span>дней</span></div>
@@ -1221,11 +1074,9 @@
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("show");
-        }
+        if (entry.isIntersecting) entry.target.classList.add("show");
       });
-    }, { threshold: 0.12 });
+    }, { threshold: 0.1 });
 
     document.querySelectorAll(".fade").forEach(el => observer.observe(el));
   </script>
