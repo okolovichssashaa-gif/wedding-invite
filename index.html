@@ -120,13 +120,8 @@
     .love-word{
       display:inline-flex;
       align-items:flex-end;
-      gap:0;
       color:var(--red);
       position:relative;
-    }
-
-    .love-word .part{
-      display:inline-block;
     }
 
     .wrong-letter{
@@ -398,32 +393,54 @@
       padding:18px;
     }
 
+    /* ТАЙМИНГ БЕЗ НАЛЕЗАНИЙ */
     .timing{
       background:var(--card-2);
-      position:relative;
       padding:26px 18px 22px;
-      overflow:hidden;
     }
 
-    .timing-top{
-      position:relative;
-      min-height:390px;
-      margin:0 -18px 0 -18px;
-      padding:0 18px;
-      overflow:hidden;
+    .timing-grid{
+      display:grid;
+      grid-template-columns:70px 1fr 70px;
+      gap:8px;
+      align-items:start;
     }
 
-    .timing-top .title,
-    .timing-top .timing-item{
-      position:relative;
-      z-index:2;
+    .timing-left,
+    .timing-right{
+      display:grid;
+      grid-template-rows:120px 120px 120px;
+      align-items:start;
+      justify-items:center;
+    }
+
+    .timing-left img,
+    .timing-right img{
+      display:block;
+      width:auto;
+      height:auto;
+      max-width:100%;
+    }
+
+    .timing-left .dove{ width:64px; align-self:start; }
+    .timing-left .glasses{ width:56px; align-self:center; }
+    .timing-left .cake{ width:74px; align-self:end; }
+
+    .timing-right .vase{ width:64px; align-self:start; margin-top:26px; }
+    .timing-right .candles{ width:64px; align-self:end; margin-top:10px; }
+
+    .timing-right .spacer{
+      width:1px;
+      height:1px;
+    }
+
+    .timing-center{
+      text-align:center;
+      padding:0 4px;
     }
 
     .timing-item{
-      text-align:center;
-      margin:0 0 12px;
-      position:relative;
-      z-index:2;
+      margin:0 0 14px;
     }
 
     .timing-item:last-child{
@@ -443,47 +460,8 @@
       color:var(--green-text);
     }
 
-    .timing-decor{
-      position:absolute;
-      z-index:1;
-      pointer-events:none;
-      opacity:.96;
-    }
-
-    .dove{
-      width:66px;
-      left:0;
-      top:56px;
-    }
-
-    .vase{
-      width:66px;
-      right:0;
-      top:118px;
-    }
-
-    .glasses{
-      width:58px;
-      left:0;
-      top:236px;
-    }
-
-    .cake{
-      width:76px;
-      left:0;
-      top:274px;
-    }
-
-    .candles{
-      width:66px;
-      right:0;
-      top:278px;
-    }
-
     .wishes{
-      position:relative;
-      z-index:2;
-      margin-top:0;
+      margin-top:12px;
     }
 
     .wish-number{
@@ -704,12 +682,19 @@
 
     @media (max-width:390px){
       .kids-title{ font-size:40px; }
-      .timing-top{ min-height:400px; }
-      .dove{ width:62px; top:58px; }
-      .vase{ width:62px; top:120px; }
-      .glasses{ width:54px; top:240px; }
-      .cake{ width:72px; top:278px; }
-      .candles{ width:62px; top:282px; }
+      .timing-grid{
+        grid-template-columns:64px 1fr 64px;
+        gap:6px;
+      }
+      .timing-left,
+      .timing-right{
+        grid-template-rows:114px 114px 114px;
+      }
+      .timing-left .dove{ width:58px; }
+      .timing-left .glasses{ width:50px; }
+      .timing-left .cake{ width:68px; }
+      .timing-right .vase{ width:58px; }
+      .timing-right .candles{ width:58px; }
       .bottom-photo{ min-height:320px; }
       .bottom-photo img{ width:132%; }
     }
@@ -727,13 +712,13 @@
             <span class="line">Александра + Максим =</span>
             <span class="line hand-red">
               <span class="love-word">
-                <span class="part">любо</span>
+                <span>любо</span>
                 <span class="wrong-letter">
                   <span class="letter">Ф</span>
                   <span class="cross"></span>
                   <span class="fix">В</span>
                 </span>
-                <span class="part">ь</span>
+                <span>ь</span>
               </span>
             </span>
           </h1>
@@ -804,43 +789,51 @@
       </section>
 
       <section class="section timing fade">
-        <div class="timing-top">
-          <img class="timing-decor dove" src="dove.png" alt="">
-          <img class="timing-decor vase" src="vase.png" alt="">
-          <img class="timing-decor glasses" src="glasses.png" alt="">
-          <img class="timing-decor cake" src="cake.png" alt="">
-          <img class="timing-decor candles" src="candles.png" alt="">
+        <h2 class="title hand">Тайминг</h2>
 
-          <h2 class="title hand">Тайминг</h2>
-
-          <div class="timing-item">
-            <div class="timing-label">сбор гостей</div>
-            <div class="timing-time">16:00</div>
+        <div class="timing-grid">
+          <div class="timing-left">
+            <img class="dove" src="dove.png" alt="">
+            <img class="glasses" src="glasses.png" alt="">
+            <img class="cake" src="cake.png" alt="">
           </div>
 
-          <div class="timing-item">
-            <div class="timing-label">церемония</div>
-            <div class="timing-time">16:30</div>
+          <div class="timing-center">
+            <div class="timing-item">
+              <div class="timing-label">сбор гостей</div>
+              <div class="timing-time">16:00</div>
+            </div>
+
+            <div class="timing-item">
+              <div class="timing-label">церемония</div>
+              <div class="timing-time">16:30</div>
+            </div>
+
+            <div class="timing-item">
+              <div class="timing-label">банкет</div>
+              <div class="timing-time">17:00</div>
+            </div>
+
+            <div class="timing-item">
+              <div class="timing-label">торт</div>
+              <div class="timing-time">21:00</div>
+            </div>
+
+            <div class="timing-item">
+              <div class="timing-label">диджей сет</div>
+              <div class="timing-time">22:00</div>
+            </div>
           </div>
 
-          <div class="timing-item">
-            <div class="timing-label">банкет</div>
-            <div class="timing-time">17:00</div>
-          </div>
-
-          <div class="timing-item">
-            <div class="timing-label">торт</div>
-            <div class="timing-time">21:00</div>
-          </div>
-
-          <div class="timing-item">
-            <div class="timing-label">диджей сет</div>
-            <div class="timing-time">22:00</div>
+          <div class="timing-right">
+            <img class="vase" src="vase.png" alt="">
+            <div class="spacer"></div>
+            <img class="candles" src="candles.png" alt="">
           </div>
         </div>
 
         <div class="wishes">
-          <h2 class="title hand" style="margin-top:4px;">Пожелания</h2>
+          <h2 class="title hand">Пожелания</h2>
 
           <div class="wish-number">#1</div>
           <div class="wish-box">
