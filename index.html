@@ -393,7 +393,6 @@
       padding:18px;
     }
 
-    /* ТАЙМИНГ БЕЗ НАЛЕЗАНИЙ */
     .timing{
       background:var(--card-2);
       padding:26px 18px 22px;
@@ -502,43 +501,72 @@
       border-radius:42% 58% 49% 51% / 52% 39% 61% 48%;
     }
 
-    .dress-section{ background:var(--card); }
+    .dress-section{
+      background:var(--card);
+    }
 
-    .big-flower{
-      width:170px;
-      height:190px;
-      margin:0 auto 10px;
-      background:var(--red);
-      clip-path:path("M85 0 C106 14 141 18 156 46 C168 80 159 121 132 143 C114 157 109 177 96 190 C83 177 76 157 57 146 C22 124 1 84 15 47 C28 17 63 16 85 0 Z");
+    .dress-flower-wrap{
+      display:flex;
+      justify-content:center;
+      margin:6px 0 20px;
+    }
+
+    .dress-flower-card{
       position:relative;
-    }
-
-    .big-flower::after{
-      content:"❀";
-      position:absolute;
-      inset:0;
+      width:100%;
+      max-width:320px;
       display:flex;
+      justify-content:center;
       align-items:center;
-      justify-content:center;
-      color:rgba(255,255,255,.18);
-      font-size:52px;
-      font-family:"Caveat", cursive;
     }
 
-    .palette{
+    .dress-flower-card img{
+      width:100%;
+      max-width:320px;
+      height:auto;
+      display:block;
+    }
+
+    .dress-flower-content{
+      position:absolute;
+      left:50%;
+      top:49%;
+      transform:translate(-50%, -50%);
+      width:68%;
+      text-align:center;
+      color:#fff8f4;
+    }
+
+    .dress-title{
+      margin:0 0 10px;
+      font-family:"Caveat", cursive;
+      font-size:42px;
+      line-height:.9;
+      color:#fff8f4;
+    }
+
+    .dress-text{
+      margin:0;
+      font-size:22px;
+      line-height:1.02;
+      color:#fff8f4;
+    }
+
+    .dress-palette{
       display:flex;
       justify-content:center;
-      gap:10px;
-      margin:12px 0 10px;
+      gap:9px;
       flex-wrap:wrap;
+      margin-top:16px;
     }
 
-    .dot{
-      width:24px;
-      height:24px;
+    .dress-dot{
+      width:22px;
+      height:22px;
       border-radius:50%;
+      border:2px solid rgba(255,255,255,.35);
       display:inline-block;
-      box-shadow:0 1px 4px rgba(0,0,0,.12) inset;
+      box-shadow:0 1px 4px rgba(0,0,0,.10);
     }
 
     .film{
@@ -578,7 +606,6 @@
       color:var(--red);
       background:#fff9f2;
       border-radius:10px;
-      text-decoration:none;
       font-size:14px;
       font-weight:700;
       box-shadow:0 4px 10px rgba(0,0,0,.08);
@@ -590,7 +617,6 @@
       padding:11px 18px;
       background:var(--red);
       color:#fff;
-      text-decoration:none;
       border-radius:8px;
       font-size:14px;
       font-weight:700;
@@ -695,6 +721,24 @@
       .timing-left .cake{ width:68px; }
       .timing-right .vase{ width:58px; }
       .timing-right .candles{ width:58px; }
+
+      .dress-flower-card img{
+        max-width:300px;
+      }
+
+      .dress-title{
+        font-size:38px;
+      }
+
+      .dress-text{
+        font-size:20px;
+      }
+
+      .dress-dot{
+        width:20px;
+        height:20px;
+      }
+
       .bottom-photo{ min-height:320px; }
       .bottom-photo img{ width:132%; }
     }
@@ -854,20 +898,27 @@
       </section>
 
       <section class="section dress-section fade">
-        <div class="big-flower"></div>
+        <div class="dress-flower-wrap">
+          <div class="dress-flower-card">
+            <img src="dress-flower.png" alt="Дресс-код">
 
-        <h2 class="title hand">Дресс-код</h2>
-        <p class="text">
-          Определенного дресс-кода нет, но были бы рады, если бы вы отдали предпочтения постельным цветам.
-        </p>
+            <div class="dress-flower-content">
+              <h2 class="dress-title">Дресс-код</h2>
 
-        <div class="palette">
-          <span class="dot" style="background:#eadfce"></span>
-          <span class="dot" style="background:#ebc9d2"></span>
-          <span class="dot" style="background:#d9c9e4"></span>
-          <span class="dot" style="background:#c8d7ea"></span>
-          <span class="dot" style="background:#cdd7b2"></span>
-          <span class="dot" style="background:#ece6b8"></span>
+              <p class="dress-text">
+                Определенного дресс-кода нет, но были бы рады, если бы вы отдали предпочтения пастельным цветам.
+              </p>
+
+              <div class="dress-palette">
+                <span class="dress-dot" style="background:#f1ebe3"></span>
+                <span class="dress-dot" style="background:#efcfda"></span>
+                <span class="dress-dot" style="background:#dccff0"></span>
+                <span class="dress-dot" style="background:#cfe0f5"></span>
+                <span class="dress-dot" style="background:#ccd9b2"></span>
+                <span class="dress-dot" style="background:#ece7b8"></span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="film">
