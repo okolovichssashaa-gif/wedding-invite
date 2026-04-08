@@ -508,71 +508,73 @@
     .dress-flower-wrap{
       display:flex;
       justify-content:center;
-      margin:0 0 10px;
+      margin:-8px 0 0;
     }
 
-    .dress-flower-card{
+    .dress-flower-stage{
       position:relative;
       width:100%;
-      max-width:380px;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      margin-left:-18px;
-      margin-right:-18px;
+      height:520px;
+      overflow:hidden;
     }
 
-    .dress-flower-card img{
-      width:112%;
+    .dress-flower-img{
+      position:absolute;
+      width:155%;
       max-width:none;
-      height:auto;
+      left:50%;
+      top:26px;
+      transform:translateX(-45%);
       display:block;
     }
 
     .dress-flower-content{
       position:absolute;
-      left:50%;
-      top:37%;
-      transform:translate(-50%, -50%);
-      width:58%;
+      width:50%;
+      left:43%;
+      top:180px;
+      transform:translateX(-50%);
       text-align:center;
-      color:#fff8f4;
+      color:#fff9f3;
+      z-index:2;
     }
 
     .dress-title{
-      margin:0 0 12px;
+      margin:0 0 10px;
       font-family:"Caveat", cursive;
-      font-size:52px;
+      font-size:42px;
       line-height:.9;
       color:#fff9f3;
+      text-shadow:0 1px 2px rgba(120, 0, 0, .16);
     }
 
     .dress-text{
       margin:0;
-      font-size:24px;
-      line-height:1.03;
+      font-size:19px;
+      line-height:1.02;
       color:#fff9f3;
+      text-shadow:0 1px 2px rgba(120, 0, 0, .16);
     }
 
     .dress-palette{
       display:flex;
       justify-content:center;
-      gap:10px;
+      gap:9px;
       flex-wrap:wrap;
-      margin-top:18px;
+      margin-top:14px;
     }
 
     .dress-dot{
-      width:24px;
-      height:24px;
+      width:20px;
+      height:20px;
       border-radius:50%;
-      border:2px solid rgba(255,255,255,.35);
+      border:2px solid rgba(255,255,255,.42);
       display:inline-block;
-      box-shadow:0 1px 4px rgba(0,0,0,.10);
+      box-shadow:0 1px 4px rgba(0,0,0,.12);
     }
 
     .film{
-      margin-top:-16px;
+      margin-top:-34px;
       background:
         linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x top/48px 10px,
         linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x bottom/48px 10px,
@@ -727,30 +729,38 @@
       .timing-right .vase{ width:58px; }
       .timing-right .candles{ width:58px; }
 
-      .dress-flower-card img{
-        width:116%;
+      .dress-flower-stage{
+        height:470px;
+      }
+
+      .dress-flower-img{
+        width:162%;
+        left:50%;
+        top:18px;
+        transform:translateX(-46%);
       }
 
       .dress-flower-content{
-        top:36%;
-        width:59%;
+        width:51%;
+        left:43%;
+        top:168px;
       }
 
       .dress-title{
-        font-size:46px;
+        font-size:38px;
       }
 
       .dress-text{
-        font-size:21px;
+        font-size:17px;
       }
 
       .dress-dot{
-        width:22px;
-        height:22px;
+        width:18px;
+        height:18px;
       }
 
       .film{
-        margin-top:-12px;
+        margin-top:-26px;
       }
 
       .bottom-photo{ min-height:320px; }
@@ -913,8 +923,8 @@
 
       <section class="section dress-section fade">
         <div class="dress-flower-wrap">
-          <div class="dress-flower-card">
-            <img src="dress-flower.png" alt="Дресс-код">
+          <div class="dress-flower-stage">
+            <img class="dress-flower-img" src="dress-flower.png" alt="Дресс-код">
 
             <div class="dress-flower-content">
               <h2 class="dress-title">Дресс-код</h2>
