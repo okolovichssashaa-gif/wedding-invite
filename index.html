@@ -508,21 +508,23 @@
     .dress-flower-wrap{
       display:flex;
       justify-content:center;
-      margin:6px 0 20px;
+      margin:0 0 10px;
     }
 
     .dress-flower-card{
       position:relative;
       width:100%;
-      max-width:320px;
+      max-width:380px;
       display:flex;
       justify-content:center;
       align-items:center;
+      margin-left:-18px;
+      margin-right:-18px;
     }
 
     .dress-flower-card img{
-      width:100%;
-      max-width:320px;
+      width:112%;
+      max-width:none;
       height:auto;
       display:block;
     }
@@ -530,39 +532,39 @@
     .dress-flower-content{
       position:absolute;
       left:50%;
-      top:49%;
+      top:37%;
       transform:translate(-50%, -50%);
-      width:68%;
+      width:58%;
       text-align:center;
       color:#fff8f4;
     }
 
     .dress-title{
-      margin:0 0 10px;
+      margin:0 0 12px;
       font-family:"Caveat", cursive;
-      font-size:42px;
+      font-size:52px;
       line-height:.9;
-      color:#fff8f4;
+      color:#fff9f3;
     }
 
     .dress-text{
       margin:0;
-      font-size:22px;
-      line-height:1.02;
-      color:#fff8f4;
+      font-size:24px;
+      line-height:1.03;
+      color:#fff9f3;
     }
 
     .dress-palette{
       display:flex;
       justify-content:center;
-      gap:9px;
+      gap:10px;
       flex-wrap:wrap;
-      margin-top:16px;
+      margin-top:18px;
     }
 
     .dress-dot{
-      width:22px;
-      height:22px;
+      width:24px;
+      height:24px;
       border-radius:50%;
       border:2px solid rgba(255,255,255,.35);
       display:inline-block;
@@ -570,7 +572,7 @@
     }
 
     .film{
-      margin-top:16px;
+      margin-top:-16px;
       background:
         linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x top/48px 10px,
         linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x bottom/48px 10px,
@@ -708,14 +710,17 @@
 
     @media (max-width:390px){
       .kids-title{ font-size:40px; }
+
       .timing-grid{
         grid-template-columns:64px 1fr 64px;
         gap:6px;
       }
+
       .timing-left,
       .timing-right{
         grid-template-rows:114px 114px 114px;
       }
+
       .timing-left .dove{ width:58px; }
       .timing-left .glasses{ width:50px; }
       .timing-left .cake{ width:68px; }
@@ -723,20 +728,29 @@
       .timing-right .candles{ width:58px; }
 
       .dress-flower-card img{
-        max-width:300px;
+        width:116%;
+      }
+
+      .dress-flower-content{
+        top:36%;
+        width:59%;
       }
 
       .dress-title{
-        font-size:38px;
+        font-size:46px;
       }
 
       .dress-text{
-        font-size:20px;
+        font-size:21px;
       }
 
       .dress-dot{
-        width:20px;
-        height:20px;
+        width:22px;
+        height:22px;
+      }
+
+      .film{
+        margin-top:-12px;
       }
 
       .bottom-photo{ min-height:320px; }
