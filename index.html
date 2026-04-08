@@ -14,12 +14,12 @@
     :root{
       --bg:#5b6c34;
       --bg-dark:#495929;
-      --card:#efe7d8;
-      --card-2:#f4edde;
-      --red:#ae1f22;
-      --green-text:#55662f;
-      --text:#455227;
-      --shadow:0 10px 26px rgba(0,0,0,.16);
+      --card:#f3ecde;
+      --card-2:#f6efe4;
+      --red:#b3272d;
+      --green-text:#5c6c35;
+      --text:#4f5b30;
+      --shadow:0 12px 28px rgba(0,0,0,.14);
     }
 
     *{box-sizing:border-box}
@@ -60,10 +60,10 @@
       inset:0;
       pointer-events:none;
       background:
-        radial-gradient(circle at 8% 3%, rgba(174,31,34,.08), transparent 10%),
-        radial-gradient(circle at 92% 18%, rgba(85,102,47,.08), transparent 12%),
-        radial-gradient(circle at 15% 65%, rgba(174,31,34,.05), transparent 10%),
-        radial-gradient(circle at 85% 88%, rgba(85,102,47,.06), transparent 10%);
+        radial-gradient(circle at 10% 5%, rgba(179,39,45,.06), transparent 10%),
+        radial-gradient(circle at 90% 18%, rgba(92,108,53,.06), transparent 13%),
+        radial-gradient(circle at 14% 66%, rgba(179,39,45,.05), transparent 11%),
+        radial-gradient(circle at 88% 90%, rgba(92,108,53,.05), transparent 12%);
     }
 
     .section{
@@ -164,9 +164,9 @@
     .hero-photo-wrap{
       position:relative;
       padding:10px;
-      border:2px solid rgba(174,31,34,.18);
+      border:2px solid rgba(179,39,45,.18);
       border-radius:28px 28px 18px 18px;
-      background:rgba(255,255,255,.35);
+      background:rgba(255,255,255,.4);
     }
 
     .hero-photo-wrap::before,
@@ -245,10 +245,10 @@
 
     .frame{
       position:relative;
-      border:1.5px solid rgba(174,31,34,.22);
+      border:1.5px solid rgba(179,39,45,.22);
       border-radius:18px;
       padding:14px 12px;
-      background:rgba(255,255,255,.18);
+      background:rgba(255,255,255,.20);
     }
 
     .frame::before,
@@ -498,83 +498,79 @@
     }
 
     .wish-box.alt2{
-      border-radius:42% 58% 49% 51% / 52% 39% 61% 48%;
+      border-radius:999px;
+      padding-left:22px;
+      padding-right:22px;
     }
 
     .dress-section{
       background:var(--card);
+      padding-top:10px;
     }
 
     .dress-flower-wrap{
-      display:flex;
-      justify-content:center;
-      margin:-8px 0 0;
-    }
-
-    .dress-flower-stage{
       position:relative;
-      width:100%;
-      height:520px;
+      height:470px;
+      margin:0 -18px 8px;
       overflow:hidden;
     }
 
     .dress-flower-img{
       position:absolute;
-      width:155%;
-      max-width:none;
+      width:130%;
       left:50%;
-      top:26px;
-      transform:translateX(-45%);
-      display:block;
+      top:20px;
+      transform:translateX(-50%);
+      max-width:none;
     }
 
     .dress-flower-content{
       position:absolute;
-      width:50%;
-      left:43%;
-      top:180px;
+      width:47%;
+      left:50%;
+      top:140px;
       transform:translateX(-50%);
       text-align:center;
-      color:#fff9f3;
+      color:#fffaf5;
       z-index:2;
     }
 
     .dress-title{
-      margin:0 0 10px;
+      margin:0 0 8px;
       font-family:"Caveat", cursive;
-      font-size:42px;
+      font-size:44px;
       line-height:.9;
-      color:#fff9f3;
-      text-shadow:0 1px 2px rgba(120, 0, 0, .16);
+      color:#fffaf5;
+      text-shadow:0 1px 3px rgba(0,0,0,.18);
     }
 
     .dress-text{
       margin:0;
-      font-size:19px;
-      line-height:1.02;
-      color:#fff9f3;
-      text-shadow:0 1px 2px rgba(120, 0, 0, .16);
+      font-size:18px;
+      line-height:1.04;
+      color:#fffaf5;
+      text-shadow:0 1px 3px rgba(0,0,0,.18);
     }
 
     .dress-palette{
       display:flex;
       justify-content:center;
-      gap:9px;
+      gap:8px;
       flex-wrap:wrap;
       margin-top:14px;
     }
 
     .dress-dot{
-      width:20px;
-      height:20px;
+      width:18px;
+      height:18px;
       border-radius:50%;
-      border:2px solid rgba(255,255,255,.42);
+      border:2px solid rgba(255,255,255,.5);
       display:inline-block;
-      box-shadow:0 1px 4px rgba(0,0,0,.12);
+      box-shadow:0 1px 4px rgba(0,0,0,.10);
     }
 
     .film{
-      margin-top:-34px;
+      margin-top:-10px;
       background:
         linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x top/48px 10px,
         linear-gradient(90deg, #f1cbc5 0 12px, transparent 12px 36px) repeat-x bottom/48px 10px,
@@ -639,7 +635,7 @@
       position:absolute;
       top:-4px;
       font-size:16px;
-      color:rgba(174,31,34,.65);
+      color:rgba(179,39,45,.65);
       font-family:"Caveat", cursive;
     }
 
@@ -682,7 +678,7 @@
       background:rgba(255,255,255,.32);
       border-radius:14px;
       padding:8px 4px;
-      border:1px solid rgba(174,31,34,.10);
+      border:1px solid rgba(179,39,45,.10);
     }
 
     .count strong{
@@ -729,38 +725,31 @@
       .timing-right .vase{ width:58px; }
       .timing-right .candles{ width:58px; }
 
-      .dress-flower-stage{
-        height:470px;
+      .dress-flower-wrap{
+        height:430px;
       }
 
       .dress-flower-img{
-        width:162%;
-        left:50%;
+        width:138%;
         top:18px;
-        transform:translateX(-46%);
       }
 
       .dress-flower-content{
-        width:51%;
-        left:43%;
-        top:168px;
+        width:49%;
+        top:126px;
       }
 
       .dress-title{
-        font-size:38px;
+        font-size:40px;
       }
 
       .dress-text{
-        font-size:17px;
+        font-size:16px;
       }
 
       .dress-dot{
-        width:18px;
-        height:18px;
-      }
-
-      .film{
-        margin-top:-26px;
+        width:16px;
+        height:16px;
       }
 
       .bottom-photo{ min-height:320px; }
@@ -923,24 +912,22 @@
 
       <section class="section dress-section fade">
         <div class="dress-flower-wrap">
-          <div class="dress-flower-stage">
-            <img class="dress-flower-img" src="dress-flower.png" alt="Дресс-код">
+          <img class="dress-flower-img" src="dress-flower.png" alt="Дресс-код">
 
-            <div class="dress-flower-content">
-              <h2 class="dress-title">Дресс-код</h2>
+          <div class="dress-flower-content">
+            <h2 class="dress-title">Дресс-код</h2>
 
-              <p class="dress-text">
-                Определенного дресс-кода нет, но были бы рады, если бы вы отдали предпочтения пастельным цветам.
-              </p>
+            <p class="dress-text">
+              Определенного дресс-кода нет, но были бы рады, если бы вы отдали предпочтения пастельным цветам.
+            </p>
 
-              <div class="dress-palette">
-                <span class="dress-dot" style="background:#f1ebe3"></span>
-                <span class="dress-dot" style="background:#efcfda"></span>
-                <span class="dress-dot" style="background:#dccff0"></span>
-                <span class="dress-dot" style="background:#cfe0f5"></span>
-                <span class="dress-dot" style="background:#ccd9b2"></span>
-                <span class="dress-dot" style="background:#ece7b8"></span>
-              </div>
+            <div class="dress-palette">
+              <span class="dress-dot" style="background:#f1ebe3"></span>
+              <span class="dress-dot" style="background:#efcfda"></span>
+              <span class="dress-dot" style="background:#dccff0"></span>
+              <span class="dress-dot" style="background:#cfe0f5"></span>
+              <span class="dress-dot" style="background:#ccd9b2"></span>
+              <span class="dress-dot" style="background:#ece7b8"></span>
             </div>
           </div>
         </div>
