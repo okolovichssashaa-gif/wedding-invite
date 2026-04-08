@@ -419,7 +419,9 @@
       margin:0 0 18px;
     }
 
-    .timing-item:last-child{ margin-bottom:0; }
+    .timing-item:last-child{
+      margin-bottom:0;
+    }
 
     .timing-label{
       font-size:18px;
@@ -436,52 +438,39 @@
 
     .timing-decor{
       position:absolute;
-      background-image:url('decor-red.png');
-      background-repeat:no-repeat;
-      background-size:100% 100%;
-      opacity:.95;
-      pointer-events:none;
       z-index:1;
+      pointer-events:none;
+      opacity:.96;
     }
 
-    .timing-dove{
-      width:92px;
-      height:92px;
-      left:8px;
-      top:86px;
-      clip-path:inset(0 33% 52% 33%);
+    .dove{
+      width:78px;
+      left:12px;
+      top:102px;
     }
 
-    .timing-vase{
-      width:100px;
-      height:120px;
-      right:6px;
-      top:108px;
-      clip-path:inset(0 67% 47% 0);
+    .vase{
+      width:78px;
+      right:14px;
+      top:126px;
     }
 
-    .timing-glasses{
-      width:92px;
-      height:110px;
+    .glasses{
+      width:72px;
+      left:14px;
+      top:316px;
+    }
+
+    .candles{
+      width:82px;
+      right:10px;
+      top:380px;
+    }
+
+    .cake{
+      width:96px;
       left:10px;
-      top:300px;
-      clip-path:inset(0 0 46% 66%);
-    }
-
-    .timing-candles{
-      width:120px;
-      height:150px;
-      right:2px;
-      top:348px;
-      clip-path:inset(48% 62% 0 0);
-    }
-
-    .timing-cake{
-      width:122px;
-      height:132px;
-      left:0;
-      bottom:230px;
-      clip-path:inset(46% 0 0 52%);
+      bottom:242px;
     }
 
     .wish-number{
@@ -698,11 +687,6 @@
 
     @media (max-width:390px){
       .kids-title{ font-size:40px; }
-      .timing-dove{ width:82px; height:82px; left:6px; top:92px; }
-      .timing-vase{ width:90px; height:108px; right:4px; top:114px; }
-      .timing-glasses{ width:84px; height:100px; left:8px; top:306px; }
-      .timing-candles{ width:108px; height:138px; right:0; top:356px; }
-      .timing-cake{ width:112px; height:122px; left:-4px; bottom:236px; }
     }
   </style>
 </head>
@@ -795,11 +779,11 @@
       </section>
 
       <section class="section timing fade">
-        <div class="timing-decor timing-dove" aria-hidden="true"></div>
-        <div class="timing-decor timing-vase" aria-hidden="true"></div>
-        <div class="timing-decor timing-glasses" aria-hidden="true"></div>
-        <div class="timing-decor timing-candles" aria-hidden="true"></div>
-        <div class="timing-decor timing-cake" aria-hidden="true"></div>
+        <img class="timing-decor dove" src="dove.png" alt="">
+        <img class="timing-decor vase" src="vase.png" alt="">
+        <img class="timing-decor glasses" src="glasses.png" alt="">
+        <img class="timing-decor candles" src="candles.png" alt="">
+        <img class="timing-decor cake" src="cake.png" alt="">
 
         <h2 class="title hand">Тайминг</h2>
 
