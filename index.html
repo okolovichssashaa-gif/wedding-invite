@@ -17,15 +17,14 @@
       --card:#efe7d8;
       --card-2:#f4edde;
       --red:#ae1f22;
-      --red-dark:#8e171a;
       --green-text:#55662f;
       --text:#455227;
-      --white:#fffdfa;
       --shadow:0 10px 26px rgba(0,0,0,.16);
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       font-family:"Cormorant Garamond", serif;
@@ -118,34 +117,53 @@
       display:block;
     }
 
-    .wrong-word{
+    .love-word{
+      display:inline-flex;
+      align-items:flex-end;
+      gap:0;
+      color:var(--red);
+      position:relative;
+    }
+
+    .love-word .part{
+      display:inline-block;
+    }
+
+    .wrong-letter{
       position:relative;
       display:inline-block;
+      margin:0 .02em;
       color:var(--red);
-      padding:0 4px 6px;
     }
 
-    .wrong-word .cross{
+    .wrong-letter .letter{
+      position:relative;
+      z-index:2;
+      display:block;
+    }
+
+    .wrong-letter .cross{
       position:absolute;
-      left:2px;
-      right:2px;
-      top:56%;
+      left:-2px;
+      right:-2px;
+      top:52%;
       height:3px;
       background:var(--red);
-      transform:rotate(-7deg);
+      transform:rotate(-18deg);
       border-radius:3px;
-      opacity:.95;
+      z-index:3;
     }
 
-    .wrong-word .fix{
+    .wrong-letter .fix{
       position:absolute;
       top:-18px;
-      left:66%;
-      transform:translateX(-50%) rotate(-9deg);
+      left:52%;
+      transform:translateX(-50%) rotate(-8deg);
       color:var(--red);
       font-size:22px;
       line-height:1;
       font-weight:700;
+      z-index:4;
     }
 
     .hero-photo-wrap{
@@ -383,27 +401,17 @@
     .timing{
       background:var(--card-2);
       position:relative;
+      padding-top:26px;
+      padding-bottom:26px;
+      overflow:hidden;
     }
 
-    .timing::before{
-      content:"❦";
-      position:absolute;
-      top:10px;
-      left:12px;
-      color:rgba(174,31,34,.38);
-      font-size:28px;
-      font-family:"Caveat", cursive;
-    }
-
-    .timing::after{
-      content:"❦";
-      position:absolute;
-      bottom:10px;
-      right:12px;
-      color:rgba(174,31,34,.38);
-      font-size:28px;
-      font-family:"Caveat", cursive;
-      transform:rotate(180deg);
+    .timing .title,
+    .timing-item,
+    .wish-number,
+    .wish-box{
+      position:relative;
+      z-index:2;
     }
 
     .timing-item{
@@ -424,6 +432,56 @@
       line-height:.9;
       font-weight:700;
       color:var(--green-text);
+    }
+
+    .timing-decor{
+      position:absolute;
+      background-image:url('decor-red.png');
+      background-repeat:no-repeat;
+      background-size:100% 100%;
+      opacity:.95;
+      pointer-events:none;
+      z-index:1;
+    }
+
+    .timing-dove{
+      width:92px;
+      height:92px;
+      left:8px;
+      top:86px;
+      clip-path:inset(0 33% 52% 33%);
+    }
+
+    .timing-vase{
+      width:100px;
+      height:120px;
+      right:6px;
+      top:108px;
+      clip-path:inset(0 67% 47% 0);
+    }
+
+    .timing-glasses{
+      width:92px;
+      height:110px;
+      left:10px;
+      top:300px;
+      clip-path:inset(0 0 46% 66%);
+    }
+
+    .timing-candles{
+      width:120px;
+      height:150px;
+      right:2px;
+      top:348px;
+      clip-path:inset(48% 62% 0 0);
+    }
+
+    .timing-cake{
+      width:122px;
+      height:132px;
+      left:0;
+      bottom:230px;
+      clip-path:inset(46% 0 0 52%);
     }
 
     .wish-number{
@@ -639,9 +697,12 @@
     }
 
     @media (max-width:390px){
-      .kids-title{
-        font-size:40px;
-      }
+      .kids-title{ font-size:40px; }
+      .timing-dove{ width:82px; height:82px; left:6px; top:92px; }
+      .timing-vase{ width:90px; height:108px; right:4px; top:114px; }
+      .timing-glasses{ width:84px; height:100px; left:8px; top:306px; }
+      .timing-candles{ width:108px; height:138px; right:0; top:356px; }
+      .timing-cake{ width:112px; height:122px; left:-4px; bottom:236px; }
     }
   </style>
 </head>
@@ -656,10 +717,14 @@
           <h1 class="kids-title">
             <span class="line">Александра + Максим =</span>
             <span class="line hand-red">
-              <span class="wrong-word">
-                любоФь
-                <span class="cross"></span>
-                <span class="fix">В</span>
+              <span class="love-word">
+                <span class="part">любо</span>
+                <span class="wrong-letter">
+                  <span class="letter">Ф</span>
+                  <span class="cross"></span>
+                  <span class="fix">В</span>
+                </span>
+                <span class="part">ь</span>
               </span>
             </span>
           </h1>
@@ -730,6 +795,12 @@
       </section>
 
       <section class="section timing fade">
+        <div class="timing-decor timing-dove" aria-hidden="true"></div>
+        <div class="timing-decor timing-vase" aria-hidden="true"></div>
+        <div class="timing-decor timing-glasses" aria-hidden="true"></div>
+        <div class="timing-decor timing-candles" aria-hidden="true"></div>
+        <div class="timing-decor timing-cake" aria-hidden="true"></div>
+
         <h2 class="title hand">Тайминг</h2>
 
         <div class="timing-item">
@@ -757,7 +828,7 @@
           <div class="timing-time">22:00</div>
         </div>
 
-        <h2 class="title hand" style="margin-top:8px;">Пожелания</h2>
+        <h2 class="title hand" style="margin-top:18px;">Пожелания</h2>
 
         <div class="wish-number">#1</div>
         <div class="wish-box">
